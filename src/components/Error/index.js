@@ -9,7 +9,7 @@ export const Error = () => {
             </IconError>
             <WrapperError>
                 <HeaderError>Ooops! Something went wrong... </HeaderError>
-                <InfoError>Please czeck your network connection<br />and try again</InfoError>
+                <InfoError>Please check your network connection<br />and try again</InfoError>
                 <ButtonLink>Back to home page</ButtonLink>
             </WrapperError>
         </>
