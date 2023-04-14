@@ -1,5 +1,5 @@
 import './App.css';
-import { PopularMovies } from './components/PopularMovies';
+import { PopularMovies } from './PopularMovies';
 
 function App() {
   return (
