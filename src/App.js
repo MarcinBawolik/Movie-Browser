@@ -1,26 +1,37 @@
-import { HashRouter } from 'react-router-dom';
-import './App.css';
-import Logo from './images/logo';
-import { Nav, StyledNavLink, NavItems, Search, NavBle, NavItem } from './styled';
+import { HashRouter, Switch, Route } from 'react-router-dom';
+import { Nav, StyledNavLink, Container, Search, Wrapper, NavItem, NavItems, Input } from './styled';
+import { ReactComponent as WebsiteLogo } from './images/logo.svg';
+import { ReactComponent as SearchIcon } from './images/Search.svg';
 
 function App() {
   return (
     <>
-    <HashRouter>
+    <HashRouter basename="/movie-browser">
       <Nav>
-        <NavItems>
-        <NavBle>
-        <Logo />
-        <NavItem>
-            <StyledNavLink to="/movies">Movies</StyledNavLink>
-          </NavItem>
-          <NavItem>
-            <StyledNavLink to="/people">People</StyledNavLink>
-          </NavItem>
-        </NavBle>
-        <Search type="text" placeholder="Search for movies..."></Search>
-        </NavItems>
+        <Container>
+          <Wrapper>
+            <WebsiteLogo />
+            <NavItems>
+              <NavItem>
+                <StyledNavLink exact to="/">Movies</StyledNavLink>
+              </NavItem>
+              <NavItem>
+                <StyledNavLink to="/people">People</StyledNavLink>
+              </NavItem>
+            </NavItems>
+          </Wrapper>
+          <Search>
+            <SearchIcon />
+            <Input type="text" placeholder="Search for movies..."/>
+          </Search>
+        </Container>
       </Nav>
+      <Switch>
+            <Route path="/">
+            </Route>
+            <Route path="/people">
+            </Route>
+        </Switch>
     </HashRouter>
     </>
   );

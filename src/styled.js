@@ -2,11 +2,10 @@ import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav`
-    height: 94px;
+    width: 100vw;
     background-color: #000000;
-    display: flex;
     align-items: center;
-    padding: 0 16px;
+    padding: 23px 16px;
     
     @media (max-width: 768px) {
         height: auto;
@@ -19,18 +18,23 @@ export const StyledNavLink = styled(NavLink)`
     font-size: 14px;
     color: #FFFFFF;
     text-decoration: none;
-    padding: 13.5px 24px;
+    padding: 13px 24px;
 
     &.active {
         border: 1px solid white;
         border-radius: 24px;
     }
+
+    @media (max-width: 768px) {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
 `
 
-export const NavItems = styled.ul`
+export const Container = styled.ul`
     display: grid;
     grid-template-columns: auto 1fr auto;
-    gap: auto;
+    grid-gap: 30px;
     align-items: center;
     width: 100%;
     max-width: 1368px;
@@ -38,44 +42,62 @@ export const NavItems = styled.ul`
     padding: 0;
 
     @media (max-width: 768px) {
-        grid-template-columns: 1fr auto;
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-row-gap: 24px;
         margin: 0;
     }
 `
 
-export const Search = styled.input`
+export const Search = styled.form`
     height: 48px;
     width: 432px;
     border: 1px solid #E4E6F0;
     border-radius: 33px;
-    font-family: 'Poppins';
-    font-weight: 400;
-    font-size: 16px;
-    color: #7E839A;
     justify-self: end;
     padding-left: 25px;
-
-    @media (max-width: 768px) {
-        grid-row-start: 2;
-        width: 100%;
-        padding-left: 0;
-    }
-`
-
-export const NavBle = styled.div`
+    background-color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 40px;
-    margin-right: 19px;
 
     @media (max-width: 768px) {
+        width: 100vw;
     }
+`
+
+export const Wrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 `
 
 export const NavItem = styled.li`
     list-style-type: none;
-    justify-self: end;
+`
+
+export const NavItems = styled.div`
+    display: flex;
+    gap: 20px;
+    margin-left: 80px;
+
+    @media (max-width: 768px) {
+        margin-left: 19px;
+        margin-right: 19px;
+    }
+`
+
+export const Input = styled.input`
+    width: 360px;
+    height: 30px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 16px;
+    color: #7E839A;
+    border: none;
+    margin-left: 10px;
+
+    &:focus {
+        outline: none;
+  }
 `
