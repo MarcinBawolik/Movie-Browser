@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 24px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 24px;
     filter: drop-shadow(0px 4px 12px rgba(186, 199, 213, 0.5));
     border-radius: 5px;
 
     @media (max-width: 320px) {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 16px;
     }
@@ -25,7 +26,6 @@ export const Person = styled.div`
     @media (max-width: 320px) {
     width: 136px;
     height: 245px;
-    box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     border-radius: 5px;
     }
 `

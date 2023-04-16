@@ -10,31 +10,6 @@ const Cast = () => (
             <Name>Liu Yifei</Name>
             <Role>Mulan</Role>
         </Person>
-        <Person>
-            <Photo src={Poster}></Photo>
-            <Name>Liu Yifei</Name>
-            <Role>Mulan</Role>
-        </Person>
-        <Person>
-            <Photo src={Poster}></Photo>
-            <Name>Liu Yifei</Name>
-            <Role>Mulan</Role>
-        </Person>
-        <Person>
-            <Photo src={Poster}></Photo>
-            <Name>Liu Yifei</Name>
-            <Role>Mulan</Role>
-        </Person>
-        <Person>
-            <Photo src={Poster}></Photo>
-            <Name>Liu Yifei</Name>
-            <Role>Mulan</Role>
-        </Person>
-        <Person>
-            <Photo src={Poster}></Photo>
-            <Name>Liu Yifei</Name>
-            <Role>Mulan</Role>
-        </Person>
     </Container>
 );
 
