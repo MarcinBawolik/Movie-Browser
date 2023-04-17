@@ -12,6 +12,10 @@ export const Wrapper = styled.div`
     align-content: center;
     gap: 12px;
     margin: 56px 0px 123px 0px;
+
+    @media (max-width: 767px) {
+    gap: 8px;
+  }
 `
 
 export const Container = styled.a`
@@ -21,12 +25,20 @@ export const Container = styled.a`
     text-align: center;
     padding: 8px 16px;
     gap: 8px;
+
+    @media (max-width: 767px) {
+    padding: 8px 12px;
+  }
 `
 
 export const Page = styled.p`
     display: inline-flex;
     text-align: center;
     gap: 8px;
+
+    @media (max-width: 767px) {
+    gap: 2px;
+  }
 `
 
 export const Text = styled.p`
@@ -36,6 +48,10 @@ export const Text = styled.p`
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
+
+    @media (max-width: 767px) {
+        font-size: 10px;
+  }
 `
 
 export const Number = styled.p`
@@ -45,6 +61,10 @@ export const Number = styled.p`
     font-weight: 600;
     font-size: 16px;
     line-height: 150%;
+
+    @media (max-width: 767px) {
+        font-size: 10px;
+  }
 `
 
 export const StyledTile = styled(Tile)`
@@ -58,14 +78,24 @@ export const StyledTile = styled(Tile)`
     font-size: 14px;
     line-height: 140%;
     color: #18181B;
+
+    @media (max-width: 767px) {
+    gap: 4px;
+  }
 `;
 
 export const VectorLeft = styled(Left)`
-   
+   @media (max-width: 767px) {
+    width: 5px;
+    height: 8px;
+  }
 `;
 
 export const VectorRight = styled(Right)`
-   
+   @media (max-width: 767px) {
+    width: 5px;
+    height: 8px;
+  }
 `;
 
    
