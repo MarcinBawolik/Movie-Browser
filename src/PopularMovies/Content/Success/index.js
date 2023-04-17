@@ -12,7 +12,7 @@ import {
   Image,
   Content,
 } from "./styled";
-import { Genres } from "../../../getMovieGenresAPI";
+import { Genres } from "../../../getMovieGenres";
 
 export const Success = ({ movies }) => {
   return (
