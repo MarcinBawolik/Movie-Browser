@@ -3,9 +3,7 @@ import { Error } from "../../Error/index"
 import { Success } from "./Success";
 
 export const Content = ({ status, movies }) => {
-  return <Error />;
   switch (status) {
-    
     case "initial":
       return null;
 
