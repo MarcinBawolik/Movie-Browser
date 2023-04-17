@@ -2,6 +2,9 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 import { Nav, StyledNavLink, Container, Search, Wrapper, NavItem, NavItems, Input } from './styled';
 import { ReactComponent as WebsiteLogo } from './images/logo.svg';
 import { ReactComponent as SearchIcon } from './images/Search.svg';
+import './App.css';
+import { PopularMovies } from './PopularMovies';
+import { Pages } from './Pages'
 
 function App() {
   return (
@@ -33,6 +36,8 @@ function App() {
             </Route>
         </Switch>
     </HashRouter>
+      <PopularMovies />
+      <Pages />
     </>
   );
 }
