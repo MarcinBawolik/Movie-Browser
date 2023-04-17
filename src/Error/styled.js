@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as Triangle } from "./icon/triangle.svg";
 
 export const IconError = styled.div`
     text-align: center;
@@ -43,4 +44,9 @@ export const ButtonLink = styled.a`
     align-items: center;
     padding: 16px 24px;
     margin: auto;
+`
+export const TriangleIcon = styled(Triangle)`
+width: 100px;
+height: 90px;
+color: #D6E4FF;
 `

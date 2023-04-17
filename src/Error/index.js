@@ -1,11 +1,11 @@
-import { ButtonLink, HeaderError, IconError, InfoError, WrapperError } from "./styled";
-import { ReactComponent as Triangle } from "./icon/triangle.svg";
+import { ButtonLink, HeaderError, IconError, InfoError, TriangleIcon, WrapperError } from "./styled";
+
 
 export const Error = () => {
     return (
         <>
             <IconError>
-                <Triangle />
+                <TriangleIcon />
             </IconError>
             <WrapperError>
                 <HeaderError>Ooops! Something went wrong... </HeaderError>
