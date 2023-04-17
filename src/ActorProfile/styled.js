@@ -19,7 +19,8 @@ export const Image = styled.img`
 `
 
 export const Content = styled.div`
-
+    display: grid;
+    gap:24px;
 `
 
 export const Name = styled.h1`
@@ -31,12 +32,16 @@ export const Name = styled.h1`
     line-height: 120%;
 `
 
+export const DateWrapper = styled.div`
+
+`
+
 export const Date = styled.div`
     display: flex;
     margin: 0px;
 `
 
-export const Place = styled.p`
+export const Place = styled.div`
     display: flex;
     margin: 8px 0px 0px 0px;
 `
