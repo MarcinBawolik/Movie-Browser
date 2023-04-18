@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 
 export const MovieList = styled.ul`
   display: grid;
@@ -19,3 +20,8 @@ export const MovieList = styled.ul`
     grid-gap: 16px;
   }
 `;
+
+export const StyledLink = styled(Link)`
+text-decoration: none;
+color: inherit;
+`
