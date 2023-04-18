@@ -1,18 +1,8 @@
 import {
-  Movie,
-  MovieList,
-  Star,
-  Tags,
-  Title,
-  Votes,
-  VotesWrapper,
-  Year,
-  Tag,
-  Rate,
-  Image,
-  Content,
+  MovieList
 } from "./styled";
 import { Genres } from "../../../../../getMovieGenres";
+import { MovieTile } from "../../../../../common/MovieTile";
 
 export const Success = ({ movies }) => {
   return (
@@ -30,28 +20,17 @@ export const Success = ({ movies }) => {
                 vote_count,
                 genre_ids,
               }) => (
-                <Movie key={id}>
-                  <Image
-                    src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-                    alt={title}
-                  />
-                  <Content>
-                    <Title>{title}</Title>
-                    <Year>{release_date.slice(0, 4)}</Year>
-                    <Tags>
-                      {genres
-                        .filter((genre) => genre_ids.includes(genre.id))
-                        .map((genre) => (
-                          <Tag key={genre.id}>{genre.name}</Tag>
-                        ))}
-                    </Tags>
-                    <VotesWrapper>
-                      <Star />
-                      <Rate>{vote_average}</Rate>
-                      <Votes>{vote_count} głosów</Votes>
-                    </VotesWrapper>
-                  </Content>
-                </Movie>
+                <MovieTile
+                as="li"
+                id={id}
+                title={title}
+                imageSrc={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+                altText={title}
+                year={release_date.slice(0, 4)}
+                genreList={genres.filter((genre) => genre_ids.includes(genre.id))}
+                rate={vote_average}
+                votes={vote_count}
+                />
               )
             )}
           </MovieList>
