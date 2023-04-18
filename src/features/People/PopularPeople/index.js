@@ -2,20 +2,20 @@ import { Container } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import {
-  fetchPeopleLoading,
-  selectPeople,
-  selectPeopleStatus,
-} from "./popularPeopleSlice";
+  fetchPopularPeopleLoading,
+  selectPopularPeople,
+  selectPopularPeopleStatus,
+} from "../peopleSlice";
 import { Content } from "./Content";
 
 export const PopularPeople = () => {
   const dispatch = useDispatch();
 
-  const peopleStatus = useSelector(selectPeopleStatus);
-  const people = useSelector(selectPeople);
+  const peopleStatus = useSelector(selectPopularPeopleStatus);
+  const people = useSelector(selectPopularPeople);
 
   useEffect(() => {
-    dispatch(fetchPeopleLoading());
+    dispatch(fetchPopularPeopleLoading());
   }, [dispatch]);
   return (
     <Container>

@@ -1,5 +1,5 @@
-import { Loading } from "../../PopularMovies/Content/Loading";
-import { Error } from "../../Error/index"
+import { Loading } from "../../../Movies/PopularMovies/Content/Loading";
+import { Error } from "../../../../common/Error"
 import { Success } from "./Success";
 
 export const Content = ({ status, people }) => {

@@ -1,5 +1,5 @@
 import { Loading } from "./Loading";
-import { Error } from "../../Error/index"
+import { Error } from "../../../../common/Error"
 import { Success } from "./Success";
 
 export const Content = ({ status, movies }) => {

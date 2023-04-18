@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as StarIcon } from "../../../components/images/star.svg";
+import { ReactComponent as StarIcon } from "../../../../../images/star.svg";
 
 export const MovieList = styled.ul`
   display: grid;

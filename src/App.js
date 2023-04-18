@@ -3,9 +3,9 @@ import { Nav, StyledNavLink, Container, Search, Wrapper, NavItem, NavItems, Inpu
 import { ReactComponent as WebsiteLogo } from './images/logo.svg';
 import { ReactComponent as SearchIcon } from './images/Search.svg';
 import './App.css';
-import { PopularMovies } from './PopularMovies';
-import { Pages } from './Pages'
-import { PopularPeople } from './PopularPeople';
+import { PopularMovies } from './features/Movies/PopularMovies';
+import { Pages } from './common/Pages'
+import { PopularPeople } from './features/People/PopularPeople';
 
 function App() {
   return (
