@@ -7,7 +7,7 @@ const getGenres = async () => {
       `${API_URL}genre/movie/list?api_key=${API_KEY}`
     );
     if (!response.ok) {
-      throw new Error("Wystąpił błąd podczas pobierania gatunków.");
+      throw new Error("An error occurred while fetching genres.");
     }
     const data = await response.json();
     return data.genres;

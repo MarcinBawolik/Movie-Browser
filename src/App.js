@@ -5,6 +5,7 @@ import { ReactComponent as SearchIcon } from './images/Search.svg';
 import './App.css';
 import { PopularMovies } from './PopularMovies';
 import { Pages } from './Pages'
+import { PopularPeople } from './PopularPeople';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         </Switch>
     </HashRouter>
       <PopularMovies />
+      <PopularPeople />
       <Pages />
     </>
   );
