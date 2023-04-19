@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
 
 export const PeopleList = styled.ul`
@@ -53,5 +54,9 @@ export const Name = styled.h2`
   }
 `;
 
+export const StyledLink = styled(Link)`
+text-decoration: none;
+color: inherit;
+`
 
 

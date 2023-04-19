@@ -1,4 +1,4 @@
-import Loader from "../../../common/loader";
+import Loader from "../../../common/Loader";
 
 export const Loading = () => (
     <div>
