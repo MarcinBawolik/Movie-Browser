@@ -1,4 +1,4 @@
-
+import { useMediaQuery } from "react-responsive";
 import {
     Page,
     Wrapper,
@@ -8,26 +8,36 @@ import {
     Container,
     Number,
     Text,
+    TileText,
 } from "./styled"
 
 
 export const Pages = () => {
+    const isMobile = useMediaQuery({ maxWidth: 767 });
+
     return (
         <>
             <Wrapper>
                 <Container>
                     <StyledTile>
-                        <VectorLeft />
-                        First
+                        {isMobile ?
+                            <>
+                                <VectorLeft />
+                                <VectorLeft />
+                            </>
+                            :
+                            <VectorLeft />
+                        }
+                        <TileText>First</TileText>
                     </StyledTile>
                 </Container>
                 <Container>
                     <StyledTile>
                         <VectorLeft />
-                        Previous
+                        <TileText>Previous</TileText>
                     </StyledTile>
                 </Container>
-                <Page> 
+                <Page>
                     <Text>Page</Text>
                     <Number>1</Number>
                     <Text>of</Text>
@@ -35,18 +45,25 @@ export const Pages = () => {
                 </Page>
                 <Container>
                     <StyledTile>
+                        <TileText>Next</TileText>
                         <VectorRight />
-                        Next
                     </StyledTile>
                 </Container>
                 <Container>
                     <StyledTile>
-                        <VectorRight />
-                        Last
+                        <TileText>Last</TileText>
+                        {isMobile ?
+                            <>
+                                <VectorRight />
+                                <VectorRight />
+                            </>
+                            :
+                            <VectorRight />
+                        }
                     </StyledTile>
                 </Container>
             </Wrapper>
         </>
 
     )
-}
+};
