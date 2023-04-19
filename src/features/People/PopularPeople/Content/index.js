@@ -1,8 +1,8 @@
-import { Loading } from "./Loading";
-import { Error } from "./Error";
+import { Loading } from "../../../Movies/PopularMovies/Content/Loading";
+import { Error } from "../../../../common/Error"
 import { Success } from "./Success";
 
-export const Content = ({ status, movies }) => {
+export const Content = ({ status, people }) => {
   switch (status) {
     case "initial":
       return null;
@@ -14,7 +14,7 @@ export const Content = ({ status, movies }) => {
       return <Error />;
 
     case "success":
-      return <Success movies={movies} />;
+      return <Success people={people} />;
 
     default:
       throw new Error(`incorrect status: ${status}`);

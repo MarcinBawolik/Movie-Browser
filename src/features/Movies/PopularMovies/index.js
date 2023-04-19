@@ -4,17 +4,17 @@ import {
 } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchMoviesLoading, selectMovies, selectMoviesStatus } from "./popularMoviesSlice";
+import { fetchPopularMoviesLoading, selectPopularMovies, selectPopularMoviesStatus } from "../moviesSlice";
 import { Content } from "./Content";
 
 export const PopularMovies = () => {
   const dispatch = useDispatch();
 
-  const moviesStatus = useSelector(selectMoviesStatus);
-  const movies = useSelector(selectMovies);
+  const moviesStatus = useSelector(selectPopularMoviesStatus);
+  const movies = useSelector(selectPopularMovies);
 
   useEffect(() => {
-dispatch(fetchMoviesLoading());
+dispatch(fetchPopularMoviesLoading());
   },[dispatch])
   return (
     <Container>

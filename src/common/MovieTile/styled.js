@@ -1,30 +1,12 @@
 import styled from "styled-components";
-import { ReactComponent as StarIcon } from "../../../components/images/star.svg";
+import { ReactComponent as StarIcon } from "../../images/star.svg";
 
-export const MovieList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 324px));
-  grid-gap: 24px;
-  list-style: none;
-
-  @media (max-width: 1023px) {
-    grid-template-columns: repeat(3, minmax(0, 324px));
-  }
-
-  @media (max-width: 767px) {
-    grid-template-columns: repeat(2, minmax(0, 324px));
-    grid-gap: 16px;
-  }
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-    grid-gap: 16px;
-  }
-`;
-
-export const Movie = styled.li`
+export const Tile = styled.div`
   background-color: white;
   padding: 16px;
   border-radius: 5px;
+  height: 100%;
+  position: relative;
 
   @media (max-width: 480px) {
     display: grid;
@@ -35,10 +17,10 @@ export const Movie = styled.li`
 export const Image = styled.img`
   width: 100%;
   margin-bottom: 16px;
+  border-radius: 5px;
 
   @media (max-width: 767px) {
     margin-bottom: 0;
-    width: 100%;
     min-width: 114px;
   }
 `;
@@ -77,6 +59,7 @@ export const Tags = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 30px;
 `;
 
 export const Tag = styled.li`
@@ -97,7 +80,8 @@ export const VotesWrapper = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
-  margin-top: 39px;
+  position: absolute;
+  bottom: 16px;
 
   @media (max-width: 767px) {
     margin-top: 12px;
