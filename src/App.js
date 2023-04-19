@@ -16,6 +16,7 @@ import { PopularMovies } from "./features/Movies/PopularMovies";
 import { Pages } from "./common/Pages";
 import { PopularPeople } from "./features/People/PopularPeople";
 import { MovieDetails } from "./features/Movies/MovieDetails";
+import { PeopleDetails } from "./features/People/PeopleDetails";
 
 function App() {
   return (
@@ -43,6 +44,9 @@ function App() {
           </Container>
         </Nav>
         <Switch>
+          <Route path="/people/:id">
+            <PeopleDetails />
+          </Route>
           <Route path="/movies/:id">
             <MovieDetails />
           </Route>
