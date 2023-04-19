@@ -1,5 +1,7 @@
+import Loader from "../../../common/loader";
+
 export const Loading = () => (
     <div>
-        Please wait, Movies are being loaded...
+        <Loader />
     </div>
 )
