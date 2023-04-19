@@ -5,6 +5,7 @@ export const Tile = styled.div`
   background-color: white;
   padding: 16px;
   border-radius: 5px;
+  height: 100%;
   position: relative;
 
   @media (max-width: 480px) {
