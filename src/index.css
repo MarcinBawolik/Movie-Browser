@@ -13,7 +13,8 @@ html {
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #F5F5FA;
+  background-color: #E5E5E5;
+  padding: 50px;
 }
 
 code {
