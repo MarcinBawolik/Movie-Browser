@@ -1,5 +1,5 @@
 import actor from "./images/actor.png"
-import { Container, Content, Date, DateWrapper, Details, Image, LeftText, Name, Place, RightText, Wrapper } from "./styled"
+import { Container, Content, Date, Details, Image, LeftText, Name, Place, RightText, Wrapper } from "./styled"
 
 export const ActorProfile = () => {
     return (
