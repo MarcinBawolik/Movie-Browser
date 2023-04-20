@@ -36,7 +36,7 @@ export const Date = styled.div`
     margin: 0px;
 `
 
-export const Place = styled.p`
+export const Place = styled.div`
     display: flex;
     margin: 8px 0px 0px 0px;
 `
