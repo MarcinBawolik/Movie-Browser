@@ -21,6 +21,7 @@ export const Success = ({ movies }) => {
                 <>
                   <StyledLink to={`/movies/${id}`}>
                     <MovieTile
+                      key={id}
                       as="li"
                       id={id}
                       title={title}
