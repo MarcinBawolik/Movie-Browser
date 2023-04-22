@@ -26,6 +26,7 @@ export const Wrapper = styled.div`
 
 export const Image = styled.img`
     border-radius: 5px;
+    width: 564px;
 
     @media (max-width: 1023px) {
     width: 40%;
