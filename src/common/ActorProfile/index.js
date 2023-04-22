@@ -29,7 +29,7 @@ export const ActorProfile = ({
                 {isMobile ?
                     <>
                     <Wrapper>
-                        <Image src={`https://image.tmdb.org/t/p/w185/${profile_path}`} 
+                        <Image src={`https://image.tmdb.org/t/p/w500/${profile_path}`} 
                         alt="{name}" />
                         <Content>
                             <Name>{name}</Name>
@@ -49,7 +49,7 @@ export const ActorProfile = ({
                     </>
                     :
                     <Wrapper>
-                        <Image src={`https://image.tmdb.org/t/p/w185/${profile_path}`} alt="{name}" />
+                        <Image src={`https://image.tmdb.org/t/p/w500/${profile_path}`} alt="{name}" />
                         <Content>
                             <Name>{name}</Name>
                             <StyledDiv>
