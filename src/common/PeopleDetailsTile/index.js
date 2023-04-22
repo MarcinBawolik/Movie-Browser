@@ -36,7 +36,7 @@ export const PeopleDetailsTile = ({
                             <StyledDiv>
                                 <Date>
                                     <LeftText>Birth:</LeftText>
-                                    <RightText>{birthday}</RightText>
+                                    <RightText>{birthday.replace(/-/g,'.')}</RightText>
                                 </Date>
                                 <Place>
                                     <LeftText>Place of birth:</LeftText>
@@ -55,7 +55,7 @@ export const PeopleDetailsTile = ({
                             <StyledDiv>
                                 <Date>
                                     <LeftText>Date of birth:</LeftText>
-                                    <RightText>{birthday} </RightText>
+                                    <RightText>{birthday.replace(/-/g,'.')} </RightText>
                                 </Date>
                                 <Place>
                                     <LeftText>Place of birth:</LeftText>
