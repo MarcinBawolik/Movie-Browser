@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
-import { ActorProfile } from "../../../common/ActorProfile"
+import { PeopleDetailsTile } from "../../../common/PeopleDetailsTile"
 import { useEffect } from "react";
 import { useState } from "react";
 import { getPersonDetails } from "../peopleAPI";
@@ -20,7 +20,7 @@ export const PeopleDetails = () => {
         <>
             {personDetails ? (
                 <>
-                    <ActorProfile 
+                    <PeopleDetailsTile 
                     id={id}
                     profile_path={personDetails.profile_path}
                     birthday={personDetails.birthday}

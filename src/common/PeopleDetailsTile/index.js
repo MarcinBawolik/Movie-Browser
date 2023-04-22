@@ -13,7 +13,7 @@ import {
     Wrapper
 } from "./styled"
 
-export const ActorProfile = ({
+export const PeopleDetailsTile = ({
     id,
     profile_path,
     birthday,
