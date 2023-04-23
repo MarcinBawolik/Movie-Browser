@@ -14,9 +14,9 @@ export async function getPopularMovies() {
     }
   }
 
-  export const getMovieDetails = async (movieId) => {
+  export const getMovieDetails = async ({ id }) => {
     try {
-      const response = await fetch(`${API_URL}movie/${movieId}?api_key=${API_KEY}`);
+      const response = await fetch(`${API_URL}movie/${id}?api_key=${API_KEY}`);
       if (!response.ok) {
         throw new Error("An error occurred while fetching movie details.");
       }
@@ -27,9 +27,9 @@ export async function getPopularMovies() {
     }
   }
   
-  export const getMovieCredits = async (movieId) => {
+  export const getMovieCredits = async ({ id }) => {
     try {
-      const response = await fetch(`${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`);
+      const response = await fetch(`${API_URL}movie/${id}/credits?api_key=${API_KEY}`);
       if (!response.ok) {
         throw new Error("An error occurred while fetching movie credits.");
       }
