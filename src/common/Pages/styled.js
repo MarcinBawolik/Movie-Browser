@@ -66,7 +66,7 @@ export const TileText = styled.p`
   };
 `;
 
-export const Page = styled.p`
+export const Page = styled.div`
     display: inline-flex;
     text-align: center;
     gap: 8px;
