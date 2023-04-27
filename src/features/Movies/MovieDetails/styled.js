@@ -1,13 +1,16 @@
 import styled from "styled-components";
 
 export const MovieDetailsWrapper = styled.div`
+  max-width: 1368px;
   padding: 0 32px;
+  margin: 0 auto;
   @media (max-width: 1023px) {
     padding: 0 16px;
   }
 `;
 
 export const Wrapper = styled.div`
+  max-width: 1368px;
   margin: 64px auto;
   padding: 0 32px;
   display: grid;
@@ -36,7 +39,7 @@ export const Header = styled.h2`
 export const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 208px));
-  justify-content: space-between; 
+  justify-content: space-between;
   gap: 10px;
   list-style: none;
 
@@ -49,5 +52,6 @@ export const List = styled.ul`
     /* grid-gap: 16px; */
   }
   @media (max-width: 480px) {
-    grid-template-columns: repeat(2, 1fr);  }
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
