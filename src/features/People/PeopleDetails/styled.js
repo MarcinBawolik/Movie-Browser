@@ -36,17 +36,17 @@ export const Header = styled.h2`
 
 export const List = styled.ul`
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 208px));
+  grid-template-columns: repeat(4, minmax(0, 324px));
   justify-content: space-between; 
-  gap: 10px;
+  gap: 24px;
   list-style: none;
   @media (max-width: 1023px) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
   }
   @media (max-width: 767px) {
-    grid-template-columns: repeat(3, 1fr);
-    /* grid-gap: 16px; */
+    grid-template-columns: repeat(2, 1fr);
   }
   @media (max-width: 480px) {
-    grid-template-columns: repeat(2, 1fr);  }
+    grid-template-columns: repeat(1, 1fr);  }
 `;
