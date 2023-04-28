@@ -6,6 +6,7 @@ import { getPersonDetails, getPersonCredits } from "../peopleAPI";
 import { Header, List, Wrapper } from "./styled";
 import { PersonDetailsTile } from "../../../common/PersonDetailsTile";
 import noPicture from "../../../images/noPicture.png";
+import { Genres } from "../../../getMovieGenres";
 
 export const PeopleDetails = () => {
     const { id } = useParams();
@@ -42,56 +43,64 @@ export const PeopleDetails = () => {
                     />
                 </>
             ) : null}
-            <Wrapper>
-                <Header>Cast</Header>
-                <List>
-                    {personCredits &&
-                        personCredits.cast &&
-                        personCredits.cast.map((cast) => (
-                            <PersonDetailsTile
-                                as="li"
-                                id={cast.id}
-                                imageSrc={
-                                    cast.poster_path
-                                    ? `https://image.tmdb.org/t/p/w500/${cast.poster_path}`
-                                    : noPicture
-                                }
-                                altText={cast.name}
-                                title={cast.original_name}
-                                year={cast.first_air_date}
-                                genreList={cast.genre_ids}
-                                rate={cast.vote_average}
-                                votes={cast.vote_count}
-                            />
-                        ))}
-                </List>
-            </Wrapper>
-            <Wrapper>
-                <Header>Crew</Header>
-                <List>
-                    {personCredits &&
-                        personCredits.crew &&
-                        personCredits.crew.map((crew) => (
-                            <PersonDetailsTile
-                                as="li"
-                                id={crew.id}
-                                imageSrc={
-                                    crew.poster_path
-                                    ? `https://image.tmdb.org/t/p/w500/${crew.poster_path}`
-                                    : noPicture
-                                }
-                                altText={crew.name}
-                                title={crew.original_name}
-                                year={crew.first_air_date}
-                                genreList={crew.genre_ids}
-                                rate={crew.vote_average}
-                                votes={crew.vote_count}
-                            />
-                        ))}
-                </List>
-            </Wrapper>
+            <Genres>
+                {({ genres }) => (
+                    <>
+                        <Wrapper>
+                            <Header>Cast</Header>
+                            <List>
+                                {personCredits &&
+                                    personCredits.cast &&
+                                    personCredits.cast.map((cast) => (
+                                        <PersonDetailsTile
+                                            as="li"
+                                            id={cast.id}
+                                            imageSrc={
+                                                cast.poster_path
+                                                    ? `https://image.tmdb.org/t/p/w500/${cast.poster_path}`
+                                                    : noPicture
+                                            }
+                                            altText={cast.name}
+                                            title={cast.original_name}
+                                            year={cast.first_air_date}
+                                            genreList={genres.filter((genre) =>
+                                                cast.genre_ids.includes(genre.id)
+                                            )}
+                                            rate={cast.vote_average}
+                                            votes={cast.vote_count}
+                                        />
+                                    ))}
+                            </List>
+                        </Wrapper>
+                        <Wrapper>
+                            <Header>Crew</Header>
+                            <List>
+                                {personCredits &&
+                                    personCredits.crew &&
+                                    personCredits.crew.map((crew) => (
+                                        <PersonDetailsTile
+                                            as="li"
+                                            id={crew.id}
+                                            imageSrc={
+                                                crew.poster_path
+                                                    ? `https://image.tmdb.org/t/p/w500/${crew.poster_path}`
+                                                    : noPicture
+                                            }
+                                            altText={crew.name}
+                                            title={crew.original_name}
+                                            year={crew.first_air_date}
+                                            genreList={genres.filter((genre) =>
+                                                crew.genre_ids.includes(genre.id)
+                                            )}
+                                            rate={crew.vote_average}
+                                            votes={crew.vote_count}
+                                        />
+                                    ))}
+                            </List>
+                        </Wrapper>
+                    </>
+                )}
+            </Genres>
         </>
-
-
     );
 };
