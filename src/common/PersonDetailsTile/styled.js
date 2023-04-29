@@ -16,12 +16,17 @@ export const Tile = styled.div`
 
 export const Image = styled.img`
   width: 100%;
+  height: 60%;
   margin-bottom: 16px;
   border-radius: 5px;
 
   @media (max-width: 767px) {
     margin-bottom: 0;
     min-width: 114px;
+  }
+
+  @media (max-width: 480px) {
+    height: 100%;
   }
 `;
 
