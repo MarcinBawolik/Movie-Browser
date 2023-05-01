@@ -25,8 +25,8 @@ export const PersonDetailsTile = ({
   <Tile key={id}>
     <Image src={imageSrc} alt={altText} />
     <Content>
-      <Title>Nazwa</Title>
-      <Year>Rok</Year>
+      <Title>{title}</Title>
+      <Year>{year}</Year>
       <Tags>
         {genreList &&
           Array.isArray(genreList) &&

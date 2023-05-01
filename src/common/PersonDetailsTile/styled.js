@@ -91,6 +91,11 @@ export const VotesWrapper = styled.div`
   @media (max-width: 767px) {
     margin-top: 12px;
   }
+
+  @media (max-width: 480px) {
+    bottom: 8px;
+    position: static;
+  }
 `;
 
 export const Star = styled(StarIcon)`
