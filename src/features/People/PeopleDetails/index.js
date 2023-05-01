@@ -61,8 +61,8 @@ export const PeopleDetails = () => {
                                                     : noPicture
                                             }
                                             altText={cast.name}
-                                            title={cast.original_name}
-                                            year={cast.first_air_date}
+                                            title={cast.title}
+                                            year={cast.release_date.slice(0, 4)}
                                             genreList={genres.filter((genre) =>
                                                 cast.genre_ids.includes(genre.id)
                                             )}
@@ -87,8 +87,8 @@ export const PeopleDetails = () => {
                                                     : noPicture
                                             }
                                             altText={crew.name}
-                                            title={crew.original_name}
-                                            year={crew.first_air_date}
+                                            title={crew.title}
+                                            year={crew.release_date.slice(0, 4)}
                                             genreList={genres.filter((genre) =>
                                                 crew.genre_ids.includes(genre.id)
                                             )}
