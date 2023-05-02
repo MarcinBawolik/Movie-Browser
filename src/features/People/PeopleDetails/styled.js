@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 
 export const MovieDetailsWrapper = styled.div`
   padding: 0 32px;
@@ -50,3 +51,8 @@ export const List = styled.ul`
   @media (max-width: 480px) {
     grid-template-columns: repeat(1, 1fr);  }
 `;
+
+export const StyledLink = styled(Link)`
+text-decoration: none;
+color: inherit;
+`

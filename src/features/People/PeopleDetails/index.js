@@ -3,7 +3,7 @@ import { PeopleDetailsTile } from "../../../common/PeopleDetailsTile"
 import { useEffect } from "react";
 import { useState } from "react";
 import { getPersonDetails, getPersonCredits } from "../peopleAPI";
-import { Header, List, Wrapper } from "./styled";
+import { Header, List, StyledLink, Wrapper } from "./styled";
 import { PersonDetailsTile } from "../../../common/PersonDetailsTile";
 import noPicture from "../../../images/noPicture.png";
 import { Genres } from "../../../getMovieGenres";
@@ -52,23 +52,25 @@ export const PeopleDetails = () => {
                                 {personCredits &&
                                     personCredits.cast &&
                                     personCredits.cast.map((cast) => (
-                                        <PersonDetailsTile
-                                            as="li"
-                                            id={cast.id}
-                                            imageSrc={
-                                                cast.poster_path
-                                                    ? `https://image.tmdb.org/t/p/w500/${cast.poster_path}`
-                                                    : noPicture
-                                            }
-                                            altText={cast.name}
-                                            title={cast.title}
-                                            year={cast.release_date.slice(0, 4)}
-                                            genreList={genres.filter((genre) =>
-                                                cast.genre_ids.includes(genre.id)
-                                            )}
-                                            rate={cast.vote_average}
-                                            votes={cast.vote_count}
-                                        />
+                                        <StyledLink to={`/movies/${cast.id}`}>
+                                            <PersonDetailsTile
+                                                as="li"
+                                                id={cast.id}
+                                                imageSrc={
+                                                    cast.poster_path
+                                                        ? `https://image.tmdb.org/t/p/w500/${cast.poster_path}`
+                                                        : noPicture
+                                                }
+                                                altText={cast.name}
+                                                title={cast.title}
+                                                year={cast.release_date.slice(0, 4)}
+                                                genreList={genres.filter((genre) =>
+                                                    cast.genre_ids.includes(genre.id)
+                                                )}
+                                                rate={cast.vote_average}
+                                                votes={cast.vote_count}
+                                            />
+                                        </StyledLink>
                                     ))}
                             </List>
                         </Wrapper>
@@ -78,23 +80,25 @@ export const PeopleDetails = () => {
                                 {personCredits &&
                                     personCredits.crew &&
                                     personCredits.crew.map((crew) => (
-                                        <PersonDetailsTile
-                                            as="li"
-                                            id={crew.id}
-                                            imageSrc={
-                                                crew.poster_path
-                                                    ? `https://image.tmdb.org/t/p/w500/${crew.poster_path}`
-                                                    : noPicture
-                                            }
-                                            altText={crew.name}
-                                            title={crew.title}
-                                            year={crew.release_date.slice(0, 4)}
-                                            genreList={genres.filter((genre) =>
-                                                crew.genre_ids.includes(genre.id)
-                                            )}
-                                            rate={crew.vote_average}
-                                            votes={crew.vote_count}
-                                        />
+                                        <StyledLink to={`/movies/${crew.id}`}>
+                                            <PersonDetailsTile
+                                                as="li"
+                                                id={crew.id}
+                                                imageSrc={
+                                                    crew.poster_path
+                                                        ? `https://image.tmdb.org/t/p/w500/${crew.poster_path}`
+                                                        : noPicture
+                                                }
+                                                altText={crew.name}
+                                                title={crew.title}
+                                                year={crew.release_date.slice(0, 4)}
+                                                genreList={genres.filter((genre) =>
+                                                    crew.genre_ids.includes(genre.id)
+                                                )}
+                                                rate={crew.vote_average}
+                                                votes={crew.vote_count}
+                                            />
+                                        </StyledLink>
                                     ))}
                             </List>
                         </Wrapper>
