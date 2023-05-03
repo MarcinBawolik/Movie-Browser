@@ -52,11 +52,9 @@ function App() {
           </Route>
           <Route path="/people">
             <PopularPeople />
-            <Pages />
           </Route>
           <Route path="/">
             <PopularMovies />
-            <Pages />
           </Route>
         </Switch>
       </HashRouter>
@@ -65,3 +63,4 @@ function App() {
 }
 
 export default App;
+
