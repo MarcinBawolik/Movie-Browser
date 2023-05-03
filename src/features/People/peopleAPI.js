@@ -29,9 +29,9 @@ export const getPersonDetails = async ({ id }) => {
   }
 };
 
-export const getPersonMovieCredits = async ({ id }) => {
+export const getPersonCredits = async ({ id }) => {
   try {
-    const response = await fetch(`${id}person/${id}/movie_credits?api_key=${API_KEY}`);
+    const response = await fetch(`${API_URL}person/${id}/movie_credits?api_key=${API_KEY}`);
     if (!response.ok) {
       throw new Error("An error occurred while fetching person movie credits.");
     }
