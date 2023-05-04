@@ -29,6 +29,11 @@ export const Person = styled.li`
   background-color: white;
   padding: 16px;
   border-radius: 5px;
+  
+  &:hover {
+    background-color: #f2f2f2;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 export const Image = styled.img`
