@@ -29,6 +29,8 @@ export const Person = styled.li`
   background-color: white;
   padding: 16px;
   border-radius: 5px;
+  height: 100%;
+ 
   
   &:hover {
     background-color: #f2f2f2;
