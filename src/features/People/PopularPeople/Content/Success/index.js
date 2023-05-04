@@ -1,10 +1,10 @@
-import { Person, PeopleList, Name, Image, StyledLink } from "./styled";
+import { Person, PeopleList, Name, Image, StyledLink, Header } from "./styled";
 import Pages from "../../../../../common/Pages"
 import { useState } from "react";
 
 export const Success = ({ people }) => {
       const [currentPage, setCurrentPage] = useState(1);
-      const [resultsPerPage, setResultsPerPage] = useState(18);
+      const [resultsPerPage] = useState(18);
 
       const indexOfLastResult = currentPage * resultsPerPage;
       const indexOfFirstResult = indexOfLastResult - resultsPerPage;
@@ -16,6 +16,7 @@ export const Success = ({ people }) => {
 
       return (
         <>
+        <Header>Popular People</Header>
           <PeopleList>
             {currentResults.map(({ id,
               name,
