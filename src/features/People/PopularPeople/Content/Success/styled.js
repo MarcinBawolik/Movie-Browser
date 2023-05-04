@@ -39,6 +39,7 @@ export const Person = styled.li`
 export const Image = styled.img`
   width: 100%;
   margin-bottom: 16px;
+  border-radius: 5px;
 
   @media (max-width: 767px) {
     min-width: 114px;
