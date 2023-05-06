@@ -47,7 +47,7 @@ export const PeopleDetails = () => {
                 {({ genres }) => (
                     <>
                         <Wrapper>
-                            <Header>Cast</Header>
+                            <Header> Movies - Cast ({personCredits && personCredits.cast ? personCredits.cast.length : 0})</Header>
                             <List>
                                 {personCredits &&
                                     personCredits.cast &&
@@ -69,13 +69,14 @@ export const PeopleDetails = () => {
                                                 )}
                                                 rate={cast.vote_average}
                                                 votes={cast.vote_count}
+                                                
                                             />
                                         </StyledLink>
                                     ))}
                             </List>
                         </Wrapper>
                         <Wrapper>
-                            <Header>Crew</Header>
+                            <Header>Movies - Crew ({personCredits && personCredits.crew ? personCredits.crew.length : 0})</Header>
                             <List>
                                 {personCredits &&
                                     personCredits.crew &&
