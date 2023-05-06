@@ -20,6 +20,8 @@ export const Tile = styled.div`
 `;
 
 export const Image = styled.img`
+ display: inline-block;
+  vertical-align: middle;
   width: 100%;
   margin-bottom: 16px;
   border-radius: 5px;
@@ -36,6 +38,8 @@ export const Image = styled.img`
 
 export const Content = styled.div`
   margin-left: 16px;
+  display: inline-block;
+  vertical-align: middle;
 `;
 
 export const Title = styled.h2`
