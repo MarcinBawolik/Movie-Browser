@@ -8,6 +8,11 @@ export const Tile = styled.div`
   height: 100%;
   position: relative;
 
+  &:hover {
+    background-color: #f2f2f2;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
   @media (max-width: 480px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -15,6 +20,8 @@ export const Tile = styled.div`
 `;
 
 export const Image = styled.img`
+ display: inline-block;
+  vertical-align: middle;
   width: 100%;
   margin-bottom: 16px;
   border-radius: 5px;
@@ -31,6 +38,8 @@ export const Image = styled.img`
 
 export const Content = styled.div`
   margin-left: 16px;
+  display: inline-block;
+  vertical-align: middle;
 `;
 
 export const Title = styled.h2`
@@ -38,6 +47,7 @@ export const Title = styled.h2`
   line-height: 1.3;
   max-width: 292px;
   word-break: break-word;
+
 
   @media (max-width: 767px) {
     font-size: 16px;

@@ -1,6 +1,26 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
 
+export const Header = styled.h1`
+padding: 56px 0px 24px 0px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 120%;
+color: #18181B;
+
+@media (max-width: 767px) {
+   font-size: 28px;
+  }
+
+@media (max-width: 320px) {
+font-size: 20px;
+color: #000000;
+  }
+`
+
 export const PeopleList = styled.ul`
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 208px));
@@ -29,15 +49,19 @@ export const Person = styled.li`
   background-color: white;
   padding: 16px;
   border-radius: 5px;
+  height: 100%;
+ 
+  
+  &:hover {
+    background-color: #f2f2f2;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 export const Image = styled.img`
   width: 100%;
   margin-bottom: 16px;
-
-  @media (max-width: 767px) {
-    min-width: 114px;
-  }
+  border-radius: 5px;
 `;
 
 export const Name = styled.h2`
