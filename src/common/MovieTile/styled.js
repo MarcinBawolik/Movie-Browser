@@ -12,6 +12,11 @@ export const Tile = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+  &:hover {
+    background-color: #f2f2f2;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 export const Image = styled.img`

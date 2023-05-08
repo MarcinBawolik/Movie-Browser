@@ -29,6 +29,7 @@ export const Image = styled.img`
   border-radius: 5px;
   width: 24vw;
   min-width: 116px;
+  max-width: 320px;
   @media (max-width: 1023px) {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
@@ -139,12 +140,13 @@ export const Star = styled(StarIcon)`
   }
 `;
 export const Rate = styled.p`
-  font-size: 16px;
-  font-weight: bold;
-  margin-right: 8px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 130%;
 
   @media (max-width: 767px) {
-    font-size: 12px;
+    font-size: 13px;
     margin-right: 6px;
   }
 `;
