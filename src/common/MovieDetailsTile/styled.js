@@ -140,12 +140,14 @@ export const Star = styled(StarIcon)`
   }
 `;
 export const Rate = styled.p`
-  font-size: 16px;
-  font-weight: bold;
-  margin-right: 8px;
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 130%;
 
   @media (max-width: 767px) {
-    font-size: 12px;
+    font-size: 13px;
     margin-right: 6px;
   }
 `;
