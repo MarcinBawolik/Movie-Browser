@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
 
 export const MovieDetailsWrapper = styled.div`
@@ -55,3 +56,8 @@ export const List = styled.ul`
     grid-template-columns: repeat(2, 1fr);
   }
 `;
+
+export const StyledLink = styled(Link)`
+text-decoration: none;
+color: inherit;
+`
