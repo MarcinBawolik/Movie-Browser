@@ -21,6 +21,7 @@ export const Person = styled.div`
 export const Photo = styled.img`
   border-radius: 5px;
   max-width: 100%;
+
   @media (max-width: 320px) {
     min-width: 120px;
   }
@@ -31,6 +32,14 @@ export const Name = styled.h3`
   font-size: 22px;
   color: #18181b;
   text-align: center;
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
 
 export const Role = styled.p`
@@ -38,9 +47,12 @@ export const Role = styled.p`
   font-size: 18px;
   color: #7e839a;
   text-align: center;
-  
 
-  @media (max-width: 320px) {
+  @media (max-width: 767px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 480px) {
     font-size: 13px;
   }
 `;
