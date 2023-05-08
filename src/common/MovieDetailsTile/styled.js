@@ -140,11 +140,10 @@ export const Star = styled(StarIcon)`
   }
 `;
 export const Rate = styled.p`
-  font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: 22px;
-line-height: 130%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 130%;
 
   @media (max-width: 767px) {
     font-size: 13px;
