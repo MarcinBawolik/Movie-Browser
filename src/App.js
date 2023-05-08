@@ -2,18 +2,16 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 import {
   Nav,
   StyledNavLink,
-  Container,
   Search,
   Wrapper,
   NavItem,
   NavItems,
   Input,
+  Logo,
+  Icon,
 } from "./styled";
-import { ReactComponent as WebsiteLogo } from "./images/logo.svg";
-import { ReactComponent as SearchIcon } from "./images/Search.svg";
 import "./App.css";
 import { PopularMovies } from "./features/Movies/PopularMovies";
-import { Pages } from "./common/Pages";
 import { PopularPeople } from "./features/People/PopularPeople";
 import { MovieDetails } from "./features/Movies/MovieDetails";
 import { PeopleDetails } from "./features/People/PeopleDetails";
@@ -23,25 +21,23 @@ function App() {
     <>
       <HashRouter basename="/movie-browser">
         <Nav>
-          <Container>
-            <Wrapper>
-              <WebsiteLogo />
-              <NavItems>
-                <NavItem>
-                  <StyledNavLink exact to="/">
-                    Movies
-                  </StyledNavLink>
-                </NavItem>
-                <NavItem>
-                  <StyledNavLink to="/people">People</StyledNavLink>
-                </NavItem>
-              </NavItems>
-            </Wrapper>
+          <Wrapper>
+            <Logo />
+            <NavItems>
+              <NavItem>
+                <StyledNavLink exact to="/">
+                  Movies
+                </StyledNavLink>
+              </NavItem>
+              <NavItem>
+                <StyledNavLink to="/people">People</StyledNavLink>
+              </NavItem>
+            </NavItems>
             <Search>
-              <SearchIcon />
+              <Icon />
               <Input type="text" placeholder="Search for movies..." />
             </Search>
-          </Container>
+          </Wrapper>
         </Nav>
         <Switch>
           <Route path="/people/:id">
@@ -52,6 +48,7 @@ function App() {
           </Route>
           <Route path="/people">
             <PopularPeople />
+            ~~
           </Route>
           <Route path="/">
             <PopularMovies />
@@ -63,4 +60,3 @@ function App() {
 }
 
 export default App;
-
