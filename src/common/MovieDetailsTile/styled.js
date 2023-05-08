@@ -29,6 +29,7 @@ export const Image = styled.img`
   border-radius: 5px;
   width: 24vw;
   min-width: 116px;
+  max-width: 320px;
   @media (max-width: 1023px) {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
