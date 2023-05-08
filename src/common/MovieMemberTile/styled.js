@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const Person = styled.div`
-  display: grid;
-  text-align: center;
-  grid-gap: 8px;
-  justify-content: center;
+ background-color: white;
   padding: 16px;
-  background-color: white;
+  border-radius: 5px;
+  height: 100%;
+  position: relative;
   filter: drop-shadow(0px 4px 12px rgba(186, 199, 213, 0.5));
   border-radius: 5px;
 
@@ -39,6 +38,7 @@ export const Role = styled.p`
   font-size: 18px;
   color: #7e839a;
   text-align: center;
+  
 
   @media (max-width: 320px) {
     font-size: 13px;
