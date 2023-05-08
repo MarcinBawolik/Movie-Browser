@@ -13,6 +13,11 @@ export const Person = styled.div`
   @media (max-width: 766px) {
     padding: 8px;
   }
+
+  &:hover {
+    background-color: #f2f2f2;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
 `;
 export const Photo = styled.img`
   border-radius: 5px;
