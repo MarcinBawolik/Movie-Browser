@@ -1,6 +1,5 @@
 import {
   Container,
-  Header
 } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -18,7 +17,6 @@ dispatch(fetchPopularMoviesLoading());
   },[dispatch])
   return (
     <Container>
-      <Header>Popular Movies</Header>
       <Content status={moviesStatus} movies={movies} />
     </Container>
   );

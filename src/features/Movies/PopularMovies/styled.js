@@ -10,14 +10,5 @@ export const Container = styled.div`
   }
 `;
 
-export const Header = styled.h1`
-  text-align: left;
-  font-size: 36px;
-  margin: 0 0 24px 0;
 
-  @media (max-width: 767px) {
-    font-size: 18px;
-    margin: 0 0 12px 0;
-  }
-`;
 
