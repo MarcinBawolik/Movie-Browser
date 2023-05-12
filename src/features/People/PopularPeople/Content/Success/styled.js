@@ -36,11 +36,10 @@ export const PeopleList = styled.ul`
     grid-gap: 16px;
   }
   @media (max-width: 480px) {
-    grid-template-columns: repeat(2, minmax(136px));
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 12px;
   }
   @media (max-width: 320px) {
-    grid-template-columns: 1fr;
     grid-gap: 8px;
   }
 `;
