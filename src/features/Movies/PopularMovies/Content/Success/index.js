@@ -1,4 +1,4 @@
-import { MovieList, StyledLink } from "./styled";
+import { Header, MovieList, StyledLink } from "./styled";
 import { Genres } from "../../../../../getMovieGenres";
 import { MovieTile } from "../../../../../common/MovieTile";
 import { useState } from "react";
@@ -18,6 +18,7 @@ export const Success = ({ movies }) => {
 
   return (
     <>
+      <Header>Popular Movies</Header>
       <Genres>
         {({ genres }) => (
           <MovieList>

@@ -18,11 +18,15 @@ const Pages = ({ totalResults, resultsPerPage, currentPage, onPageChange }) => {
   const totalPages = Math.ceil(totalResults / resultsPerPage);
 
   const handlePreviousPage = () => {
-    onPageChange(currentPage - 1);
+    if(currentPage > 1) { 
+      onPageChange(currentPage - 1); 
+    }
   };
 
   const handleNextPage = () => {
-    onPageChange(currentPage + 1);
+    if(currentPage < (totalPages)) {
+      onPageChange(currentPage + 1);
+    }
   };
 
   const handleFirstPage = () => {

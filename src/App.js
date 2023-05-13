@@ -48,7 +48,6 @@ function App() {
           </Route>
           <Route path="/people">
             <PopularPeople />
-            ~~
           </Route>
           <Route path="/">
             <PopularMovies />
