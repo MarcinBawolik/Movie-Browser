@@ -48,7 +48,7 @@ export const MovieDetailsTile = ({
             ))}
         </DetailContentList>
         <Details>Release date:</Details>
-        <DetailContent>{secondDetail}</DetailContent>
+        <DetailContent>{secondDetail ? secondDetail.replace(/-/g,'.') : "Date unknown"}</DetailContent>
       </DetailsWrapper>
       <Tags>
         {genreList &&
