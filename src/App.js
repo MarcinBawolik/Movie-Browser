@@ -16,7 +16,9 @@ import { PopularPeople } from "./features/People/PopularPeople";
 import { MovieDetails } from "./features/Movies/MovieDetails";
 import { PeopleDetails } from "./features/People/PeopleDetails";
 
+
 function App() {
+  
   return (
     <>
       <HashRouter basename="/movie-browser">
@@ -25,12 +27,14 @@ function App() {
             <Logo />
             <NavItems>
               <NavItem>
-                <StyledNavLink exact to="/">
+                <StyledNavLink to="/movies" activeClassName="active">
                   Movies
                 </StyledNavLink>
               </NavItem>
               <NavItem>
-                <StyledNavLink to="/people">People</StyledNavLink>
+                <StyledNavLink to="/people" activeClassName="active">
+                  People
+                </StyledNavLink>
               </NavItem>
             </NavItems>
             <Search>
@@ -48,9 +52,8 @@ function App() {
           </Route>
           <Route path="/people">
             <PopularPeople />
-            ~~
           </Route>
-          <Route path="/">
+          <Route path="/movies">
             <PopularMovies />
           </Route>
         </Switch>
@@ -60,3 +63,5 @@ function App() {
 }
 
 export default App;
+
+
