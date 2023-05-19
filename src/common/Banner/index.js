@@ -21,7 +21,7 @@ export const Banner = ({ imageSrc, altText, rate, votes, title }) => {
           <WrapperRate>
             <Star />
             <Rate>{rate}</Rate>
-            <MaxRate>/10</MaxRate>
+            <MaxRate> / 10</MaxRate>
           </WrapperRate>
           <Votes>{votes} głosów</Votes>
         </Descripion>
