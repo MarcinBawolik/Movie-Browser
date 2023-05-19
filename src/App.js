@@ -1,4 +1,4 @@
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import {
   Nav,
   StyledNavLink,
@@ -25,7 +25,7 @@ function App() {
             <Logo />
             <NavItems>
               <NavItem>
-                <StyledNavLink exact to="/">
+                <StyledNavLink to="/movies">
                   Movies
                 </StyledNavLink>
               </NavItem>
@@ -40,10 +40,13 @@ function App() {
           </Wrapper>
         </Nav>
         <Switch>
+          <Route exact path="/">
+            <Redirect to="/movies" />
+          </Route>
           <Route path="/people/:id">
             <PeopleDetails />
           </Route>
-          <Route path="/movies/:id">
+          <Route exact path="/movies/:id">
             <MovieDetails />
           </Route>
           <Route path="/people">
