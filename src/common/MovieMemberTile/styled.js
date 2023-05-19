@@ -21,6 +21,8 @@ export const Person = styled.div`
 export const Photo = styled.img`
   border-radius: 5px;
   max-width: 100%;
+  width: 176px;
+  height: 231px;
 
   @media (max-width: 320px) {
     min-width: 120px;
