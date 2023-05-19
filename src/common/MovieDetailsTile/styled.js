@@ -57,8 +57,11 @@ export const Title = styled.h2`
   }
 `;
 
-export const DetailsWrapper = styled.span`
+export const Detailes = styled.div`
   margin: 24px 0;
+`
+
+export const DetailsWrapper = styled.span`
   display: grid;
   grid-template-columns: auto 1fr;
   @media (max-width: 767px) {
@@ -66,7 +69,8 @@ export const DetailsWrapper = styled.span`
     grid-template-columns: 1fr;
   }
 `;
-export const Details = styled.p`
+
+export const DetailsTitle = styled.p`
   color: #74788b;
   font-size: 18px;
   margin-right: 10px;

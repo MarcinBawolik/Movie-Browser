@@ -1,4 +1,5 @@
 import {
+  Detailes,
   Tile,
   Image,
   Rate,
@@ -10,7 +11,7 @@ import {
   Star,
   Title,
   DetailsWrapper,
-  Details,
+  DetailsTitle,
   DetailContent,
   DetailContentList,
   DetailContentListItem,
@@ -36,20 +37,24 @@ export const MovieDetailsTile = ({
     <Image src={imageSrc} alt={altText} />
     <Wrapper>
       <Title>{title}</Title>
-      <DetailsWrapper>
-        <Details>Production:</Details>
-        <DetailContentList>
-          {productionList &&
-            Array.isArray(productionList) &&
-            productionList.map((firstDetail) => (
-              <DetailContentListItem key={firstDetail.id}>
-                {firstDetail.name}
-              </DetailContentListItem>
-            ))}
+      <Detailes>
+        <DetailsWrapper>
+          <DetailsTitle>Production:</DetailsTitle>
+          <DetailContentList>
+            {productionList &&
+              Array.isArray(productionList) &&
+              productionList.map((firstDetail) => (
+                <DetailContentListItem key={firstDetail.id}>
+                  {firstDetail.name}
+                </DetailContentListItem>
+              ))}
         </DetailContentList>
-        <Details>Release date:</Details>
-        <DetailContent>{secondDetail ? secondDetail.replace(/-/g,'.') : "Date unknown"}</DetailContent>
-      </DetailsWrapper>
+        </DetailsWrapper>
+          <DetailsWrapper>
+          <DetailsTitle>Release date:</DetailsTitle>
+          <DetailContent>{secondDetail ? secondDetail.replace(/-/g,'.') : "Date unknown"}</DetailContent>
+        </DetailsWrapper>
+      </Detailes>
       <Tags>
         {genreList &&
           Array.isArray(genreList) &&
