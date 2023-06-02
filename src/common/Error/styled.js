@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
 
 export const IconError = styled.div`
@@ -29,6 +30,11 @@ export const InfoError = styled.h2`
     font-size: 22px;
     line-height: 130%;
 `;
+
+export const StyledLink = styled(Link)`
+text-decoration: none;
+color: inherit;
+`
 
 export const ButtonLink = styled.a`
     color: #FFFFFF;
