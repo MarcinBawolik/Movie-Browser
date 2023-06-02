@@ -64,12 +64,11 @@ export const PeopleDetails = () => {
             <Genres>
                 {({ genres }) => (
                     <>
-                        <Wrapper>
-                            <Header> Movies - Cast ({credits && credits.cast ? credits.cast.length : 0})</Header>
-                            <List>
-                                {credits &&
-                                    credits.cast &&
-                                    credits.cast.map((cast) => (
+                        {credits && credits.cast && credits.cast.length > 0 && (
+                            <Wrapper>
+                                <Header> Movies - Cast ({credits.cast.length})</Header>
+                                <List>
+                                    {credits.cast.map((cast) => (
                                         <StyledLink to={`/movies/${cast.id}`}>
                                             <PersonDetailsTile
                                                 as="li"
@@ -87,18 +86,17 @@ export const PeopleDetails = () => {
                                                 )}
                                                 rate={cast.vote_average}
                                                 votes={cast.vote_count}
-
                                             />
                                         </StyledLink>
                                     ))}
-                            </List>
-                        </Wrapper>
-                        <Wrapper>
-                            <Header>Movies - Crew ({credits && credits.crew ? credits.crew.length : 0})</Header>
-                            <List>
-                                {credits &&
-                                    credits.crew &&
-                                    credits.crew.map((crew) => (
+                                </List>
+                            </Wrapper>
+                        )}
+                        {credits && credits.crew && credits.crew.length > 0 && (
+                            <Wrapper>
+                                <Header>Movies - Crew ({credits.crew.length})</Header>
+                                <List>
+                                    {credits.crew.map((crew) => (
                                         <StyledLink to={`/movies/${crew.id}`}>
                                             <PersonDetailsTile
                                                 as="li"
@@ -119,11 +117,12 @@ export const PeopleDetails = () => {
                                             />
                                         </StyledLink>
                                     ))}
-                            </List>
-                        </Wrapper>
+                                </List>
+                            </Wrapper>
+                        )}
                     </>
                 )}
             </Genres>
         </>
     );
-};
+}
