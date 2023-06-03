@@ -25,7 +25,7 @@ function App() {
             <Logo />
             <NavItems>
               <NavItem>
-                <StyledNavLink exact to="/">
+                <StyledNavLink to="/movies">
                   Movies
                 </StyledNavLink>
               </NavItem>
