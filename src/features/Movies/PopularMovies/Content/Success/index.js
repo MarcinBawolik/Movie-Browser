@@ -33,7 +33,7 @@ export const Success = ({ movies }) => {
                 genre_ids,
               }) => (
                 <>
-                  <StyledLink to={`/movies/${id}`}>
+                  <StyledLink to={`/movies/movies/${id}`}>
                     <MovieTile
                       key={id}
                       as="li"
