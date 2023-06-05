@@ -23,7 +23,6 @@ export const Search = () => {
           onChange={useInputChange()}
         />
       </Form>
-      ;
     </>
   );
 };
