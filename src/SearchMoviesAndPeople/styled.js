@@ -12,7 +12,7 @@ export const SearchResults = styled.div`
   font-size: 36px;
   line-height: 1.2;
   margin-bottom: 24px;
-  color: pink;
+  color: black;
 
   @media (max-width: 1100px) {
     font-size: 30px;
