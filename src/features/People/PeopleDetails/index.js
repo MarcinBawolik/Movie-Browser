@@ -52,7 +52,7 @@ export const PeopleDetails = () => {
                                 {personCredits &&
                                     personCredits.cast &&
                                     personCredits.cast.map((cast) => (
-                                        <StyledLink to={`/movies/${cast.id}`}>
+                                        <StyledLink to={`/movies/movies/${cast.id}`}>
                                             <PersonDetailsTile
                                                 as="li"
                                                 id={cast.id}
@@ -81,7 +81,7 @@ export const PeopleDetails = () => {
                                 {personCredits &&
                                     personCredits.crew &&
                                     personCredits.crew.map((crew) => (
-                                        <StyledLink to={`/movies/${crew.id}`}>
+                                        <StyledLink to={`/movies/movies/${crew.id}`}>
                                             <PersonDetailsTile
                                                 as="li"
                                                 id={crew.id}

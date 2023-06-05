@@ -1,41 +1,44 @@
 import { API_KEY, API_URL } from "../../API";
 
 export async function getPopularMovies() {
-    try {
-      const response = await fetch(`${API_URL}movie/popular?api_key=${API_KEY}`);
-      if (!response.ok) {
-        throw new Error("Wystąpił błąd podczas pobierania postaci.");
-      }
-      const data = await response.json();
-      const results = data.results
-      return results;
-    } catch (error) {
-      console.error(error);
+  try {
+    const response = await fetch(`${API_URL}movie/popular?api_key=${API_KEY}`);
+    if (!response.ok) {
+      throw new Error("Wystąpił błąd podczas pobierania postaci.");
     }
+    const data = await response.json();
+    const results = data.results;
+    return results;
+  } catch (error) {
+    console.error(error);
   }
+}
 
-  export const getMovieDetails = async ({ id }) => {
-    try {
-      const response = await fetch(`${API_URL}movie/${id}?api_key=${API_KEY}`);
-      if (!response.ok) {
-        throw new Error("An error occurred while fetching movie details.");
-      }
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error(error);
+export const getMovieDetails = async ({ id }) => {
+  try {
+    const response = await fetch(`${API_URL}movie/${id}?api_key=${API_KEY}`);
+    if (!response.ok) {
+      throw new Error("An error occurred while fetching movie details.");
     }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
   }
-  
-  export const getMovieCredits = async ({ id }) => {
-    try {
-      const response = await fetch(`${API_URL}movie/${id}/credits?api_key=${API_KEY}`);
-      if (!response.ok) {
-        throw new Error("An error occurred while fetching movie credits.");
-      }
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error(error);
+};
+
+export const getMovieCredits = async ({ id }) => {
+  try {
+    const response = await fetch(
+      `${API_URL}movie/${id}/credits?api_key=${API_KEY}`
+    );
+    if (!response.ok) {
+      throw new Error("An error occurred while fetching movie credits.");
     }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
   }
+};
+
