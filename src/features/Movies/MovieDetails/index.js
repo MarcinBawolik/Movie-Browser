@@ -10,7 +10,6 @@ import Loader from "../../../common/Loader"
 import { Error } from "../../../common/Error";
 import { useState, useEffect } from "react";
 
-
 export const MovieDetails = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -78,13 +77,14 @@ export const MovieDetails = () => {
         </>
       )}
       <Wrapper>
-        <Header>Cast</Header>
-
+        <Header>
+          Cast ({credits && credits.cast && credits.cast.length})
+        </Header>
         <List>
           {credits &&
             credits.cast &&
             credits.cast.map((cast) => (
-              <StyledLink to={`/people/${cast.id}`}>
+              <StyledLink to={`/people/people/${cast.id}`}>
                 <MovieMemberTile
                   as="li"
                   id={cast.id}
@@ -99,10 +99,11 @@ export const MovieDetails = () => {
               </StyledLink>
             ))}
         </List>
-
       </Wrapper>
       <Wrapper>
-        <Header>Crew</Header>
+        <Header>
+          Crew ({credits && credits.crew && credits.crew.length})
+        </Header>
         <List>
           {credits &&
             credits.crew &&

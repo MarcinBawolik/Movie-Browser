@@ -1,20 +1,11 @@
-import { HashRouter, Switch, Route } from "react-router-dom";
-import {
-  Nav,
-  StyledNavLink,
-  Search,
-  Wrapper,
-  NavItem,
-  NavItems,
-  Input,
-  Logo,
-  Icon,
-} from "./styled";
-import "./App.css";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import { Nav, StyledNavLink, Wrapper, NavItem, NavItems, Logo } from "./styled";
 import { PopularMovies } from "./features/Movies/PopularMovies";
 import { PopularPeople } from "./features/People/PopularPeople";
 import { MovieDetails } from "./features/Movies/MovieDetails";
 import { PeopleDetails } from "./features/People/PeopleDetails";
+import { Search } from "./features/Search";
+import SearchMovieorPeople from "./SearchMoviesAndPeople";
 
 function App() {
   return (
@@ -25,32 +16,37 @@ function App() {
             <Logo />
             <NavItems>
               <NavItem>
-                <StyledNavLink to="/movies">
+                <StyledNavLink exact to="/movies/popular-movies">
                   Movies
                 </StyledNavLink>
               </NavItem>
               <NavItem>
-                <StyledNavLink to="/people">People</StyledNavLink>
+                <StyledNavLink exact to="/people/popular-people">
+                  People
+                </StyledNavLink>
               </NavItem>
             </NavItems>
-            <Search>
-              <Icon />
-              <Input type="text" placeholder="Search for movies..." />
-            </Search>
+            <Search />
           </Wrapper>
         </Nav>
         <Switch>
-          <Route path="/people/:id">
+          <Route exact path="/">
+            <Redirect to="/movies/popular-movies" />
+          </Route>
+          <Route path="/people/people/:id">
             <PeopleDetails />
           </Route>
-          <Route path="/movies/:id">
+          <Route path="/movies/movies/:id">
             <MovieDetails />
           </Route>
-          <Route path="/people">
+          <Route exact path="/people/popular-people">
             <PopularPeople />
           </Route>
-          <Route path="/">
+          <Route exact path="/movies/popular-movies">
             <PopularMovies />
+          </Route>
+          <Route path="*">
+            <SearchMovieorPeople />
           </Route>
         </Switch>
       </HashRouter>
