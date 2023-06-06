@@ -7,51 +7,69 @@ import { Header, List, StyledLink, Wrapper } from "./styled";
 import { PersonDetailsTile } from "../../../common/PersonDetailsTile";
 import noPicture from "../../../images/noPicture.png";
 import { Genres } from "../../../getMovieGenres";
+import Loader from "../../../common/Loader"
+import { Error } from "../../../common/Error";
+import { useQuery } from "react-query";
 
 export const PeopleDetails = () => {
     const { id } = useParams();
-    const [personDetails, setPersonDetails] = useState(null);
-    const [personCredits, setPersonCredits] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+
+    const {
+        data: person,
+        isLoading: isMovieLoading,
+        isError: isMovieError,
+    } = useQuery(["movie", { id }], getPersonDetails);
+
+    const {
+        data: credits,
+        isLoading: isCreditsLoading,
+        isError: isCreditsError,
+    } = useQuery(["credits", { id }], getPersonCredits);
 
     useEffect(() => {
-        const fetchDetailsData = async () => {
-            const data = await getPersonDetails({ id });
-            setPersonDetails(data);
-        };
-        fetchDetailsData();
-    }, [id]);
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1000);
 
-    useEffect(() => {
-        const fetchPersonCreditsData = async () => {
-            const data = await getPersonCredits({ id });
-            setPersonCredits(data);
-        };
-        fetchPersonCreditsData();
-    }, [id]);
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (isLoading || isMovieLoading || isCreditsLoading) {
+        return (
+            <Loader></Loader>
+        );
+    }
+
+    if (isMovieError || isCreditsError) {
+        return (
+            <Error></Error>
+        );
+    }
 
     return (
         <>
-            {personDetails ? (
+            {person && (
                 <>
                     <PeopleDetailsTile
                         id={id}
-                        profile_path={personDetails.profile_path}
-                        birthday={personDetails.birthday}
-                        place_of_birth={personDetails.place_of_birth}
-                        biography={personDetails.biography}
-                        name={personDetails.name}
+                        profile_path={person.profile_path}
+                        birthday={person.birthday}
+                        place_of_birth={person.place_of_birth}
+                        biography={person.biography}
+                        name={person.name}
                     />
                 </>
-            ) : null}
+            )}
             <Genres>
                 {({ genres }) => (
                     <>
                         <Wrapper>
-                            <Header> Movies - Cast ({personCredits && personCredits.cast ? personCredits.cast.length : 0})</Header>
+                            <Header> Movies - Cast ({credits && credits.cast ? credits.cast.length : 0})</Header>
                             <List>
-                                {personCredits &&
-                                    personCredits.cast &&
-                                    personCredits.cast.map((cast) => (
+                                {credits &&
+                                    credits.cast &&
+                                    credits.cast.map((cast) => (
                                         <StyledLink to={`/movies/movies/${cast.id}`}>
                                             <PersonDetailsTile
                                                 as="li"
@@ -69,18 +87,18 @@ export const PeopleDetails = () => {
                                                 )}
                                                 rate={cast.vote_average}
                                                 votes={cast.vote_count}
-                                                
+
                                             />
                                         </StyledLink>
                                     ))}
                             </List>
                         </Wrapper>
                         <Wrapper>
-                            <Header>Movies - Crew ({personCredits && personCredits.crew ? personCredits.crew.length : 0})</Header>
+                            <Header>Movies - Crew ({credits && credits.crew ? credits.crew.length : 0})</Header>
                             <List>
-                                {personCredits &&
-                                    personCredits.crew &&
-                                    personCredits.crew.map((crew) => (
+                                {credits &&
+                                    credits.crew &&
+                                    credits.crew.map((crew) => (
                                         <StyledLink to={`/movies/movies/${crew.id}`}>
                                             <PersonDetailsTile
                                                 as="li"

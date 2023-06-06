@@ -14,7 +14,9 @@ export const getPopularPeople = async () => {
   }
 };
 
-export const getPersonDetails = async ({ id }) => {
+export const getPersonDetails = async ({ queryKey  }) => {
+  const [, { id }] = queryKey;
+
   try {
     const response = await fetch(
       `${API_URL}person/${id}?api_key=${API_KEY}`
@@ -29,15 +31,17 @@ export const getPersonDetails = async ({ id }) => {
   }
 };
 
-export const getPersonCredits = async ({ id }) => {
-  try {
-    const response = await fetch(`${API_URL}person/${id}/movie_credits?api_key=${API_KEY}`);
+export const getPersonCredits = async ({ queryKey }) => {
+    const [, { id }] = queryKey;
+
+    const response = await fetch(`${API_URL}person/${id}/credits?api_key=${API_KEY}`);
+      
+  
     if (!response.ok) {
-      throw new Error("An error occurred while fetching person movie credits.");
+      throw new Error(response.statusText);
     }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
+  
+    return await response.json();
   }
-};
+
+  

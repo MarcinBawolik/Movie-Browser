@@ -1,70 +1,89 @@
 import { Banner } from "../../../common/Banner";
 import { MovieMemberTile } from "../../../common/MovieMemberTile";
 import { MovieDetailsTile } from "../../../common/MovieDetailsTile";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieDetails, getMovieCredits } from "../moviesAPI";
 import { MovieDetailsWrapper, Wrapper, Header, List, StyledLink } from "./styled";
 import noPicture from "../../../images/noPicture.png";
+import { useQuery } from "react-query";
+import Loader from "../../../common/Loader"
+import { Error } from "../../../common/Error";
+import { useState, useEffect } from "react";
 
 export const MovieDetails = () => {
   const { id } = useParams();
-  const [movieDetails, setMovieDetails] = useState(null);
-  const [movieCredits, setMovieCredits] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const {
+    data: movie,
+    isLoading: isMovieLoading,
+    isError: isMovieError,
+  } = useQuery(["movie", { id }], getMovieDetails);
+
+  const {
+    data: credits,
+    isLoading: isCreditsLoading,
+    isError: isCreditsError,
+  } = useQuery(["credits", { id }], getMovieCredits);
 
   useEffect(() => {
-    const fetchDetailsData = async () => {
-      const data = await getMovieDetails({ id });
-      setMovieDetails(data);
-    };
-    fetchDetailsData();
-  }, [id]);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
 
-  useEffect(() => {
-    const fetchCreditsData = async () => {
-      const data = await getMovieCredits({ id });
-      setMovieCredits(data);
-    };
-    fetchCreditsData();
-  }, [id]);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading || isMovieLoading || isCreditsLoading) {
+    return (
+      <Loader></Loader>
+    );
+  }
+
+  if (isMovieError || isCreditsError) {
+    return (
+      <Error></Error>
+    );
+  }
 
   return (
     <>
-      {movieDetails ? (
+      {movie && (
         <>
           <Banner
-            imageSrc={`https://image.tmdb.org/t/p/w1280/${movieDetails.backdrop_path}`}
-            altText={movieDetails.title}
-            title={movieDetails.title}
-            votes={movieDetails.vote_count}
-            rate={movieDetails.vote_average.toFixed(1)}
+            imageSrc={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
+            altText={movie.title}
+            title={movie.title}
+            votes={movie.vote_count}
+            rate={movie.vote_average.toFixed(1)}
           />
           <MovieDetailsWrapper>
             <MovieDetailsTile
               id={id}
-              imageSrc={`https://image.tmdb.org/t/p/w300/${movieDetails.poster_path}`}
-              altText={movieDetails.title}
-              title={movieDetails.title}
-              productionList={movieDetails.production_countries.filter(
+              imageSrc={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+              altText={movie.title}
+              title={movie.title}
+              productionList={movie.production_countries.filter(
                 (country) => country.name
               )}
-              secondDetail={movieDetails.release_date}
-              genreList={movieDetails.genres.filter((genre) => genre.id)}
-              rate={movieDetails.vote_average.toFixed(1)}
-              votes={movieDetails.vote_count}
-              content={movieDetails.overview}
-              content2={movieDetails.overview}
+              secondDetail={movie.release_date}
+              genreList={movie.genres.filter((genre) => genre.id)}
+              rate={movie.vote_average.toFixed(1)}
+              votes={movie.vote_count}
+              content={movie.overview}
+              content2={movie.overview}
             />
           </MovieDetailsWrapper>
         </>
-      ) : null}
+      )}
       <Wrapper>
-        <Header>Cast</Header>
-
+        <Header>
+          Cast ({credits && credits.cast && credits.cast.length})
+        </Header>
         <List>
-          {movieCredits &&
-            movieCredits.cast &&
-            movieCredits.cast.map((cast) => (
+          {credits &&
+            credits.cast &&
+            credits.cast.map((cast) => (
               <StyledLink to={`/people/people/${cast.id}`}>
                 <MovieMemberTile
                   as="li"
@@ -80,15 +99,16 @@ export const MovieDetails = () => {
               </StyledLink>
             ))}
         </List>
-
       </Wrapper>
       <Wrapper>
-        <Header>Crew</Header>
+        <Header>
+          Crew ({credits && credits.crew && credits.crew.length})
+        </Header>
         <List>
-          {movieCredits &&
-            movieCredits.crew &&
-            movieCredits.crew.map((crew) => (
-              <StyledLink to={`/people/people/${crew.id}`}>
+          {credits &&
+            credits.crew &&
+            credits.crew.map((crew) => (
+              <StyledLink to={`/people/${crew.id}`}>
                 <MovieMemberTile
                   as="li"
                   id={crew.id}

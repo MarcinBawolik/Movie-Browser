@@ -14,31 +14,30 @@ export async function getPopularMovies() {
   }
 }
 
-export const getMovieDetails = async ({ id }) => {
-  try {
-    const response = await fetch(`${API_URL}movie/${id}?api_key=${API_KEY}`);
-    if (!response.ok) {
-      throw new Error("An error occurred while fetching movie details.");
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
-};
+  export const getMovieDetails = async ({ queryKey  }) => {
+    const [, { id }] = queryKey;
 
-export const getMovieCredits = async ({ id }) => {
-  try {
+    try {
+      const response = await fetch(`${API_URL}movie/${id}?api_key=${API_KEY}`);
+      if (!response.ok) {
+        throw new Error("An error occurred while fetching movie details.");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  
+  export const getMovieCredits = async ({ queryKey }) => {
+    const [, { id }] = queryKey;
+
     const response = await fetch(
-      `${API_URL}movie/${id}/credits?api_key=${API_KEY}`
-    );
+      `${API_URL}movie/${id}/credits?api_key=${API_KEY}`);
+  
     if (!response.ok) {
-      throw new Error("An error occurred while fetching movie credits.");
+      throw new Error(response.statusText);
     }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
+  
+    return await response.json();
   }
-};
-
