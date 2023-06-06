@@ -104,9 +104,9 @@ export const MovieDetails = () => {
       <Wrapper>
         <Header>Crew</Header>
         <List>
-          {movieCredits &&
-            movieCredits.crew &&
-            movieCredits.crew.map((crew) => (
+          {credits &&
+            credits.crew &&
+            credits.crew.map((crew) => (
               <StyledLink to={`/people/${crew.id}`}>
                 <MovieMemberTile
                   as="li"
