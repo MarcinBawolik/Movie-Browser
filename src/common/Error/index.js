@@ -1,4 +1,4 @@
-import { ButtonLink, HeaderError, IconError, InfoError, WrapperError } from "./styled";
+import { ButtonLink, HeaderError, IconError, InfoError, StyledLink, WrapperError } from "./styled";
 import { ReactComponent as Triangle } from "./icon/triangle.svg";
 
 export const Error = () => {
@@ -10,7 +10,9 @@ export const Error = () => {
             <WrapperError>
                 <HeaderError>Ooops! Something went wrong... </HeaderError>
                 <InfoError>Please check your network connection<br />and try again</InfoError>
-                <ButtonLink>Back to home page</ButtonLink>
+                <StyledLink to={`/movies/`}>
+                    <ButtonLink>Back to home page</ButtonLink>
+                </StyledLink>
             </WrapperError>
         </>
     )

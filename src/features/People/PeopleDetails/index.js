@@ -87,7 +87,6 @@ export const PeopleDetails = () => {
                                                 )}
                                                 rate={cast.vote_average}
                                                 votes={cast.vote_count}
-
                                             />
                                         </StyledLink>
                                     ))}
@@ -99,7 +98,7 @@ export const PeopleDetails = () => {
                                 {credits &&
                                     credits.crew &&
                                     credits.crew.map((crew) => (
-                                        <StyledLink to={`/movies/movies/${crew.id}`}>
+                                        <StyledLink to={`/movies/${crew.id}`}>
                                             <PersonDetailsTile
                                                 as="li"
                                                 id={crew.id}
@@ -119,8 +118,9 @@ export const PeopleDetails = () => {
                                             />
                                         </StyledLink>
                                     ))}
-                            </List>
-                        </Wrapper>
+                                </List>
+                            </Wrapper>
+                        )}
                     </>
                 )}
             </Genres>
