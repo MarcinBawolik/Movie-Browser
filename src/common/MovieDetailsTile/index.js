@@ -58,7 +58,7 @@ export const MovieDetailsTile = ({
       <VotesWrapper>
         <Star />
         <Rate>{rate}</Rate>
-        <OnTen>/10</OnTen>
+        <OnTen>/ 10</OnTen>
         <Votes>
           {votes}
           {" votes"}
