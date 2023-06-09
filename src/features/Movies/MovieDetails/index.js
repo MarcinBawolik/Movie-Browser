@@ -77,52 +77,60 @@ export const MovieDetails = () => {
         </>
       )}
       <Wrapper>
-        <Header>
-          Cast ({credits && credits.cast && credits.cast.length})
-        </Header>
-        <List>
-          {credits &&
-            credits.cast &&
-            credits.cast.map((cast) => (
-              <StyledLink to={`/people/people/${cast.id}`}>
-                <MovieMemberTile
-                  as="li"
-                  id={cast.id}
-                  name={cast.character}
-                  role={cast.name}
-                  photo={
-                    cast.profile_path
-                      ? `https://image.tmdb.org/t/p/w185/${cast.profile_path}`
-                      : noPicture
-                  }
-                />
-              </StyledLink>
-            ))}
-        </List>
+        {credits.crew.length > 0 && (
+          <>
+            <Header>
+              Cast ({credits.cast.length})
+            </Header>
+            <List>
+              {credits &&
+                credits.cast &&
+                credits.cast.map((cast) => (
+                  <StyledLink to={`/people/people/${cast.id}`}>
+                    <MovieMemberTile
+                      as="li"
+                      id={cast.id}
+                      name={cast.character}
+                      role={cast.name}
+                      photo={
+                        cast.profile_path
+                          ? `https://image.tmdb.org/t/p/w185/${cast.profile_path}`
+                          : noPicture
+                      }
+                    />
+                  </StyledLink>
+                ))}
+            </List>
+          </>
+        )}
       </Wrapper>
       <Wrapper>
-        <Header>
-          Crew ({credits && credits.crew && credits.crew.length})
-        </Header>
-        <List>
-          {credits &&
-            credits.crew &&
-            credits.crew.map((crew) => (
-              <StyledLink to={`/people/${crew.id}`}>
-                <MovieMemberTile
-                  as="li"
-                  id={crew.id}
-                  role={crew.job}
-                  name={crew.name}
-                  photo={
-                    crew.profile_path
-                      ? `https://image.tmdb.org/t/p/w185/${crew.profile_path}`
-                      : noPicture
-                  }
-                />
-              </StyledLink>
-            ))}
-        </List>
+        {credits.crew.length > 0 && (
+          <>
+            <Header>
+              Crew ({credits.crew.length})
+            </Header>
+            <List>
+              {credits &&
+                credits.crew &&
+                credits.crew.map((crew) => (
+                  <StyledLink to={`/people/${crew.id}`}>
+                    <MovieMemberTile
+                      as="li"
+                      id={crew.id}
+                      role={crew.job}
+                      name={crew.name}
+                      photo={
+                        crew.profile_path
+                          ? `https://image.tmdb.org/t/p/w185/${crew.profile_path}`
+                          : noPicture
+                      }
+                    />
+                  </StyledLink>
+                ))}
+            </List>
+          </>
+        )}
       </Wrapper>
     </>
   );
