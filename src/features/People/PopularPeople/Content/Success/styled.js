@@ -49,11 +49,12 @@ export const Person = styled.li`
   padding: 16px;
   border-radius: 5px;
   height: 100%;
- 
+  transition: transform 0.3s ease-in-out;
   
   &:hover {
     background-color: #f2f2f2;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
   }
 `;
 

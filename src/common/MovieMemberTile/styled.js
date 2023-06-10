@@ -8,6 +8,8 @@ export const Person = styled.div`
   position: relative;
   filter: drop-shadow(0px 4px 12px rgba(186, 199, 213, 0.5));
   border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+  
 
   @media (max-width: 766px) {
     padding: 8px;
@@ -16,6 +18,7 @@ export const Person = styled.div`
   &:hover {
     background-color: #f2f2f2;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
   }
 `;
 export const Photo = styled.img`
