@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { getMovieDetails, getMovieCredits } from "../moviesAPI";
 import { MovieDetailsWrapper, Wrapper, Header, List, StyledLink } from "./styled";
 import noPicture from "../../../images/noPicture.png";
+import noMovie from "../../../images/noMovie.svg"
 import { useQuery } from "react-query";
 import Loader from "../../../common/Loader"
 import { Error } from "../../../common/Error";
@@ -45,7 +46,7 @@ export const MovieDetails = () => {
       <Error></Error>
     );
   }
-
+ 
   return (
     <>
       {movie && (
@@ -60,7 +61,10 @@ export const MovieDetails = () => {
           <MovieDetailsWrapper>
             <MovieDetailsTile
               id={id}
-              imageSrc={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+              imageSrc={movie.poster_path
+                ? `https://image.tmdb.org/t/p/w300/${movie.poster_path}`
+                  : noMovie
+              }
               altText={movie.title}
               title={movie.title}
               productionList={movie.production_countries.filter(
