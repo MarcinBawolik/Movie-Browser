@@ -9,6 +9,7 @@ import {
   Image,
   Descripion,
   ImageWrapper,
+  GradientMask,
 } from "./styled";
 
 export const Banner = ({ imageSrc, altText, rate, votes, title }) => {
@@ -16,6 +17,7 @@ export const Banner = ({ imageSrc, altText, rate, votes, title }) => {
     <Container>
       <ImageWrapper>
         <Image src={imageSrc} alt={altText} />
+        <GradientMask />
         <Descripion>
           <Title>{title}</Title>
           <WrapperRate>
