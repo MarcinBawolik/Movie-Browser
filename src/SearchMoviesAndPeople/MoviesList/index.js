@@ -7,7 +7,7 @@ import {
 } from "./searchMoviesSlice";
 import Pages from "../../common/Pages";
 import { useState } from "react";
-import noPicture from "../../images/noPicture.png";
+import noPoster from "../../images/noPoster.png";
 import { Genres } from "../../getMovieGenres";
 import { StyledLink } from "../../features/Movies/PopularMovies/Content/Success/styled";
 
@@ -54,7 +54,7 @@ const MoviesList = () => {
                       imageSrc={
                         poster_path
                           ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-                          : noPicture
+                          : noPoster
                       }
                       genreList={genres.filter((genre) =>
                         genre_ids.includes(genre.id)

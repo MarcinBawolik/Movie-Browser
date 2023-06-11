@@ -5,7 +5,7 @@ import { useState } from "react";
 import { getPersonDetails, getPersonCredits } from "../peopleAPI";
 import { Header, List, StyledLink, Wrapper } from "./styled";
 import { PersonDetailsTile } from "../../../common/PersonDetailsTile";
-import noPicture from "../../../images/noPicture.png";
+import noPoster from "../../../images/noPoster.png";
 import { Genres } from "../../../getMovieGenres";
 import Loader from "../../../common/Loader"
 import { Error } from "../../../common/Error";
@@ -77,7 +77,7 @@ export const PeopleDetails = () => {
                                                 imageSrc={
                                                     cast.poster_path
                                                         ? `https://image.tmdb.org/t/p/w500/${cast.poster_path}`
-                                                        : noPicture
+                                                        : noPoster
                                                 }
                                                 altText={cast.name}
                                                 title={cast.title}
@@ -105,7 +105,7 @@ export const PeopleDetails = () => {
                                                 imageSrc={
                                                     crew.poster_path
                                                         ? `https://image.tmdb.org/t/p/w500/${crew.poster_path}`
-                                                        : noPicture
+                                                        : noPoster
                                                 }
                                                 altText={crew.name}
                                                 title={crew.title}
@@ -120,7 +120,6 @@ export const PeopleDetails = () => {
                                     ))}
                                 </List>
                             </Wrapper>
-                        )}
                     </>
                 )}
             </Genres>
