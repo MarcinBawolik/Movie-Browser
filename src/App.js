@@ -6,6 +6,7 @@ import { MovieDetails } from "./features/Movies/MovieDetails";
 import { PeopleDetails } from "./features/People/PeopleDetails";
 import { Search } from "./features/Search";
 import SearchMovieorPeople from "./SearchMoviesAndPeople";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       <HashRouter basename="/movie-browser">
         <Nav>
           <Wrapper>
-            <Logo />
+            <NavLink exact to="/movies/popular-movies">
+              <Logo />
+            </NavLink>
             <NavItems>
               <NavItem>
                 <StyledNavLink exact to="/movies/popular-movies">
