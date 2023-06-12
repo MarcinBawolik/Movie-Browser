@@ -14,12 +14,12 @@ import {
 
 export const Banner = ({ imageSrc, altText, rate, votes, title }) => {
   return (
-    <Container>
-      {imageSrc > 0 && (
-        <>
+    <>
+      {imageSrc !== null && (
+        <Container>
           <ImageWrapper>
-            <Image src={imageSrc} alt={altText} />
-        <GradientMask />
+            <Image src={`https://image.tmdb.org/t/p/w1280/${imageSrc}`} />
+            <GradientMask />
             <Descripion>
               <Title>{title}</Title>
               <WrapperRate>
@@ -30,8 +30,8 @@ export const Banner = ({ imageSrc, altText, rate, votes, title }) => {
               <Votes>{votes} głosów</Votes>
             </Descripion>
           </ImageWrapper>
-        </>
+        </Container>
       )}
-    </Container>
+    </>
   );
 };
