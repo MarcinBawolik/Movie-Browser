@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getPersonDetails, getPersonCredits } from "../peopleAPI";
 import { Header, List, StyledLink, Wrapper } from "./styled";
 import { PersonDetailsTile } from "../../../common/PersonDetailsTile";
-import noPicture from "../../../images/noPicture.png";
+import noPoster from "../../../images/noPoster.png";
 import { Genres } from "../../../getMovieGenres";
 import Loader from "../../../common/Loader";
 import { Error } from "../../../common/Error";
@@ -60,69 +60,62 @@ export const PeopleDetails = () => {
                 {({ genres }) => (
                     <>
                         <Wrapper>
-                            {credits && credits.cast && credits.cast.length > 0 && (
-                                <>
-                                    <Header>
-                                        Movies - Cast ({credits.cast.length})
-                                    </Header>
-                                    <List>
-                                        {credits.cast.map((cast) => (
-                                            <StyledLink to={`/movies/movies/${cast.id}`}>
-                                                <PersonDetailsTile
-                                                    as="li"
-                                                    id={cast.id}
-                                                    imageSrc={
-                                                        cast.poster_path
-                                                            ? `https://image.tmdb.org/t/p/w500/${cast.poster_path}`
-                                                            : noPicture
-                                                    }
-                                                    altText={cast.name}
-                                                    title={cast.title}
-                                                    year={cast.release_date.slice(0, 4)}
-                                                    genreList={genres.filter((genre) =>
-                                                        cast.genre_ids.includes(genre.id)
-                                                    )}
-                                                    rate={cast.vote_average}
-                                                    votes={cast.vote_count}
-                                                />
-                                            </StyledLink>
-                                        ))}
-                                    </List>
-                                </>
-                            )}
+                            <Header> Movies - Cast ({credits && credits.cast ? credits.cast.length : 0})</Header>
+                            <List>
+                                {credits &&
+                                    credits.cast &&
+                                    credits.cast.map((cast) => (
+                                        <StyledLink to={`/movies/movies/${cast.id}`}>
+                                            <PersonDetailsTile
+                                                as="li"
+                                                id={cast.id}
+                                                imageSrc={
+                                                    cast.poster_path
+                                                        ? `https://image.tmdb.org/t/p/w500/${cast.poster_path}`
+                                                        : noPoster
+                                                }
+                                                altText={cast.name}
+                                                title={cast.title}
+                                                year={cast.release_date.slice(0, 4)}
+                                                genreList={genres.filter((genre) =>
+                                                    cast.genre_ids.includes(genre.id)
+                                                )}
+                                                rate={cast.vote_average}
+                                                votes={cast.vote_count}
+                                            />
+                                        </StyledLink>
+                                    ))}
+                            </List>
                         </Wrapper>
                         <Wrapper>
-                            {credits && credits.crew && credits.crew.length > 0 && (
-                                <>
-                                    <Header>
-                                        Movies - Crew ({credits.crew.length})
-                                    </Header>
-                                    <List>
-                                        {credits.crew.map((crew) => (
-                                            <StyledLink to={`/movies/${crew.id}`}>
-                                                <PersonDetailsTile
-                                                    as="li"
-                                                    id={crew.id}
-                                                    imageSrc={
-                                                        crew.poster_path
-                                                            ? `https://image.tmdb.org/t/p/w500/${crew.poster_path}`
-                                                            : noPicture
-                                                    }
-                                                    altText={crew.name}
-                                                    title={crew.title}
-                                                    year={crew.release_date.slice(0, 4)}
-                                                    genreList={genres.filter((genre) =>
-                                                        crew.genre_ids.includes(genre.id)
-                                                    )}
-                                                    rate={crew.vote_average}
-                                                    votes={crew.vote_count}
-                                                />
-                                            </StyledLink>
-                                        ))}
-                                    </List>
-                                </>
-                            )}
-                        </Wrapper>
+                            <Header>Movies - Crew ({credits && credits.crew ? credits.crew.length : 0})</Header>
+                            <List>
+                                {credits &&
+                                    credits.crew &&
+                                    credits.crew.map((crew) => (
+                                        <StyledLink to={`/movies/${crew.id}`}>
+                                            <PersonDetailsTile
+                                                as="li"
+                                                id={crew.id}
+                                                imageSrc={
+                                                    crew.poster_path
+                                                        ? `https://image.tmdb.org/t/p/w500/${crew.poster_path}`
+                                                        : noPoster
+                                                }
+                                                altText={crew.name}
+                                                title={crew.title}
+                                                year={crew.release_date.slice(0, 4)}
+                                                genreList={genres.filter((genre) =>
+                                                    crew.genre_ids.includes(genre.id)
+                                                )}
+                                                rate={crew.vote_average}
+                                                votes={crew.vote_count}
+                                            />
+                                        </StyledLink>
+                                    ))}
+                                </List>
+                            </Wrapper>
+                        
                     </>
                 )}
             </Genres>
