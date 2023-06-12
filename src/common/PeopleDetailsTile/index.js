@@ -1,4 +1,5 @@
 import { useMediaQuery } from "react-responsive";
+import noPicture from "../../images/noPicture.png"
 import {
     Container,
     Content,
@@ -23,39 +24,48 @@ export const PeopleDetailsTile = ({
 }) => {
     const isMobile = useMediaQuery({ maxWidth: 767 });
 
+
+
     return (
         <>
             <Container key={id}>
                 {isMobile ?
                     <>
-                    <Wrapper>
-                        <Image src={`https://image.tmdb.org/t/p/w500/${profile_path}`} 
-                        alt="{name}" />
-                        <Content>
-                            <Name>{name}</Name>
-                            <StyledDiv>
-                                <Date>
-                                    <LeftText>Birth:</LeftText>
-                                    <RightText>{birthday ? birthday.replace(/-/g,'.') : 'Rok Nieznany'}</RightText>
-                                </Date>
-                                <Place>
-                                    <LeftText>Place of birth:</LeftText>
-                                    <RightText>{place_of_birth}</RightText>
-                                </Place>
-                            </StyledDiv>
-                        </Content>
-                    </Wrapper>
-                    <Details>{biography}</Details>
+                        <Wrapper>
+                            <Image src={profile_path
+                                ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+                                : noPicture
+                            }
+                            />
+                            <Content>
+                                <Name>{name}</Name>
+                                <StyledDiv>
+                                    <Date>
+                                        <LeftText>Birth:</LeftText>
+                                        <RightText>{birthday ? birthday.replace(/-/g, '.') : 'Rok Nieznany'}</RightText>
+                                    </Date>
+                                    <Place>
+                                        <LeftText>Place of birth:</LeftText>
+                                        <RightText>{place_of_birth}</RightText>
+                                    </Place>
+                                </StyledDiv>
+                            </Content>
+                        </Wrapper>
+                        <Details>{biography}</Details>
                     </>
                     :
                     <Wrapper>
-                        <Image src={`https://image.tmdb.org/t/p/w500/${profile_path}`} alt="{name}" />
+                         <Image src={profile_path
+                                ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+                                : noPicture
+                            }
+                            />
                         <Content>
                             <Name>{name}</Name>
                             <StyledDiv>
                                 <Date>
                                     <LeftText>Date of birth:</LeftText>
-                                    <RightText>{birthday ? birthday.replace(/-/g,'.') : "Date unknown"} </RightText>
+                                    <RightText>{birthday ? birthday.replace(/-/g, '.') : "Date unknown"} </RightText>
                                 </Date>
                                 <Place>
                                     <LeftText>Place of birth:</LeftText>

@@ -1,13 +1,12 @@
-import { useParams } from "react-router-dom/cjs/react-router-dom.min"
-import { PeopleDetailsTile } from "../../../common/PeopleDetailsTile"
-import { useEffect } from "react";
-import { useState } from "react";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { PeopleDetailsTile } from "../../../common/PeopleDetailsTile";
+import { useEffect, useState } from "react";
 import { getPersonDetails, getPersonCredits } from "../peopleAPI";
 import { Header, List, StyledLink, Wrapper } from "./styled";
 import { PersonDetailsTile } from "../../../common/PersonDetailsTile";
 import noPoster from "../../../images/noPoster.png";
 import { Genres } from "../../../getMovieGenres";
-import Loader from "../../../common/Loader"
+import Loader from "../../../common/Loader";
 import { Error } from "../../../common/Error";
 import { useQuery } from "react-query";
 
@@ -36,15 +35,11 @@ export const PeopleDetails = () => {
     }, []);
 
     if (isLoading || isMovieLoading || isCreditsLoading) {
-        return (
-            <Loader></Loader>
-        );
+        return <Loader></Loader>;
     }
 
     if (isMovieError || isCreditsError) {
-        return (
-            <Error></Error>
-        );
+        return <Error></Error>;
     }
 
     return (
@@ -120,9 +115,10 @@ export const PeopleDetails = () => {
                                     ))}
                                 </List>
                             </Wrapper>
+                        
                     </>
                 )}
             </Genres>
         </>
     );
-};
+}; 

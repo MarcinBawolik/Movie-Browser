@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { getMovieDetails, getMovieCredits } from "../moviesAPI";
 import { MovieDetailsWrapper, Wrapper, Header, List, StyledLink } from "./styled";
 import noPicture from "../../../images/noPicture.png";
+import noMovie from "../../../images/noMovie.svg"
 import { useQuery } from "react-query";
 import Loader from "../../../common/Loader"
 import { Error } from "../../../common/Error";
@@ -45,7 +46,7 @@ export const MovieDetails = () => {
       <Error></Error>
     );
   }
-
+ 
   return (
     <>
       {movie && (
@@ -60,7 +61,10 @@ export const MovieDetails = () => {
           <MovieDetailsWrapper>
             <MovieDetailsTile
               id={id}
-              imageSrc={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+              imageSrc={movie.poster_path
+                ? `https://image.tmdb.org/t/p/w300/${movie.poster_path}`
+                  : noMovie
+              }
               altText={movie.title}
               title={movie.title}
               productionList={movie.production_countries.filter(
@@ -77,52 +81,60 @@ export const MovieDetails = () => {
         </>
       )}
       <Wrapper>
-        <Header>
-          Cast ({credits && credits.cast && credits.cast.length})
-        </Header>
-        <List>
-          {credits &&
-            credits.cast &&
-            credits.cast.map((cast) => (
-              <StyledLink to={`/people/people/${cast.id}`}>
-                <MovieMemberTile
-                  as="li"
-                  id={cast.id}
-                  name={cast.character}
-                  role={cast.name}
-                  photo={
-                    cast.profile_path
-                      ? `https://image.tmdb.org/t/p/w185/${cast.profile_path}`
-                      : noPicture
-                  }
-                />
-              </StyledLink>
-            ))}
-        </List>
+        {credits.crew.length > 0 && (
+          <>
+            <Header>
+              Cast ({credits.cast.length})
+            </Header>
+            <List>
+              {credits &&
+                credits.cast &&
+                credits.cast.map((cast) => (
+                  <StyledLink to={`/people/people/${cast.id}`}>
+                    <MovieMemberTile
+                      as="li"
+                      id={cast.id}
+                      name={cast.character}
+                      role={cast.name}
+                      photo={
+                        cast.profile_path
+                          ? `https://image.tmdb.org/t/p/w185/${cast.profile_path}`
+                          : noPicture
+                      }
+                    />
+                  </StyledLink>
+                ))}
+            </List>
+          </>
+        )}
       </Wrapper>
       <Wrapper>
-        <Header>
-          Crew ({credits && credits.crew && credits.crew.length})
-        </Header>
-        <List>
-          {credits &&
-            credits.crew &&
-            credits.crew.map((crew) => (
-              <StyledLink to={`/people/${crew.id}`}>
-                <MovieMemberTile
-                  as="li"
-                  id={crew.id}
-                  role={crew.job}
-                  name={crew.name}
-                  photo={
-                    crew.profile_path
-                      ? `https://image.tmdb.org/t/p/w185/${crew.profile_path}`
-                      : noPicture
-                  }
-                />
-              </StyledLink>
-            ))}
-        </List>
+        {credits.crew.length > 0 && (
+          <>
+            <Header>
+              Crew ({credits.crew.length})
+            </Header>
+            <List>
+              {credits &&
+                credits.crew &&
+                credits.crew.map((crew) => (
+                  <StyledLink to={`/people/${crew.id}`}>
+                    <MovieMemberTile
+                      as="li"
+                      id={crew.id}
+                      role={crew.job}
+                      name={crew.name}
+                      photo={
+                        crew.profile_path
+                          ? `https://image.tmdb.org/t/p/w185/${crew.profile_path}`
+                          : noPicture
+                      }
+                    />
+                  </StyledLink>
+                ))}
+            </List>
+          </>
+        )}
       </Wrapper>
     </>
   );

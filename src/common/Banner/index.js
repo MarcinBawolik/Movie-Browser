@@ -15,19 +15,23 @@ import {
 export const Banner = ({ imageSrc, altText, rate, votes, title }) => {
   return (
     <Container>
-      <ImageWrapper>
-        <Image src={imageSrc} alt={altText} />
+      {imageSrc > 0 && (
+        <>
+          <ImageWrapper>
+            <Image src={imageSrc} alt={altText} />
         <GradientMask />
-        <Descripion>
-          <Title>{title}</Title>
-          <WrapperRate>
-            <Star />
-            <Rate>{rate}</Rate>
-            <MaxRate>/10</MaxRate>
-          </WrapperRate>
-          <Votes>{votes} głosów</Votes>
-        </Descripion>
-      </ImageWrapper>
+            <Descripion>
+              <Title>{title}</Title>
+              <WrapperRate>
+                <Star />
+                <Rate>{rate}</Rate>
+                <MaxRate>/10</MaxRate>
+              </WrapperRate>
+              <Votes>{votes} głosów</Votes>
+            </Descripion>
+          </ImageWrapper>
+        </>
+      )}
     </Container>
   );
 };
