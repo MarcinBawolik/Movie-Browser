@@ -41,6 +41,7 @@ export const MovieDetails = () => {
     );
   }
 
+
   if (isMovieError || isCreditsError) {
     return (
       <Error></Error>
@@ -52,7 +53,7 @@ export const MovieDetails = () => {
       {movie && (
         <>
           <Banner
-            imageSrc={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
+            imageSrc={movie.backdrop_path}
             altText={movie.title}
             title={movie.title}
             votes={movie.vote_count}
