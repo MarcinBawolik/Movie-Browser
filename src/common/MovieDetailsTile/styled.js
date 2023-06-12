@@ -144,6 +144,7 @@ export const Rate = styled.p`
   font-weight: 500;
   font-size: 22px;
   line-height: 130%;
+  margin-right: 8px;
 
   @media (max-width: 767px) {
     font-size: 13px;

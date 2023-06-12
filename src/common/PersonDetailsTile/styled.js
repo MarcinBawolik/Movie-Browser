@@ -7,10 +7,12 @@ export const Tile = styled.div`
   border-radius: 5px;
   height: 100%;
   position: relative;
+  transition: transform 0.3s ease-in-out;
 
   &:hover {
     background-color: #f2f2f2;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
   }
 
   @media (max-width: 480px) {
