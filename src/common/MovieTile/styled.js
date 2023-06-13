@@ -41,6 +41,7 @@ export const Title = styled.h2`
   font-size: 22px;
   line-height: 1.3;
   max-width: 292px;
+  font-weight: 500;
   word-break: break-word;
 
   @media (max-width: 767px) {
