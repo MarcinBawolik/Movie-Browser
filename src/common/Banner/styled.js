@@ -1,94 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as StarIcon } from "./icon/StarIcon.svg";
 
-export const Container = styled.div`
-  background-color: black;
-  text-align: center;
-`;
-export const ImageWrapper = styled.div`
-  position: relative;
-  display: inline-block;
-`;
-
-export const Image = styled.img`
-  width: 100%;
-  max-width: 1326px;
-`;
-export const GradientMask = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(
-      270deg,
-      rgb(0, 0, 0) 14.11%,
-      rgba(0, 0, 0, 0.875) 15.08%,
-      rgba(0, 0, 0, 0.72) 16.51%,
-      rgba(0, 0, 0, 0.294) 19.99%,
-      rgba(0, 0, 0, 0.16) 21.88%,
-      rgba(0, 0, 0, 0) 25.68%
-    ),
-    linear-gradient(
-      90deg,
-      rgb(0, 0, 0) 13.6%,
-      rgba(0, 0, 0, 0.984) 14.58%,
-      rgba(0, 0, 0, 0.97) 15.44%,
-      rgba(0, 0, 0, 0.867) 16.3%,
-      rgba(0, 0, 0, 0.23) 22.87%,
-      rgba(0, 0, 0, 0) 26.64%
-    ),
-    linear-gradient(
-      rgb(0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.69) 4.66%,
-      rgba(0, 0, 0, 0.44) 9.34%,
-      rgba(0, 0, 0, 0.208) 15.16%,
-      rgba(0, 0, 0, 0) 24.22%
-    ),
-    linear-gradient(
-      189.44deg,
-      rgba(0, 0, 0, 0) 58.48%,
-      rgba(0, 0, 0, 0.106) 63.17%,
-      rgba(0, 0, 0, 0.235) 68.85%,
-      rgba(0, 0, 0, 0.494) 78.08%,
-      rgba(0, 0, 0, 0.74) 85.86%,
-      rgb(0, 0, 0) 92.87%
-    );
-`;
-
-export const Descripion = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding: 16px;
-
-  @media (max-width: 480px) {
-    padding: 8px;
-  }
-`;
-
-export const Title = styled.h1`
-  color: #ffffff;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 64px;
-  line-height: 120%;
-
-  @media (max-width: 767px) {
-    font-size: 40px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 24px;
-  }
-`;
 
 export const Star = styled(StarIcon)`
   width: 40px;
@@ -102,52 +14,171 @@ export const Star = styled(StarIcon)`
   }
 `;
 
-export const WrapperRate = styled.div`
+export const Background = styled.div`
+  background-color: black;
+  color: white;
+  background-image: linear-gradient(
+      270deg,
+      #000000 14.11%,
+      rgba(0, 0, 0, 0.873268) 15.08%,
+      rgba(0, 0, 0, 0.720529) 16.51%,
+      rgba(0, 0, 0, 0.294577) 19.99%,
+      rgba(0, 0, 0, 0.159921) 21.88%,
+      rgba(0, 0, 0, 0) 25.68%
+    ),
+    linear-gradient(
+      90deg,
+      #000000 13.6%,
+      rgba(0, 0, 0, 0.984059) 14.58%,
+      rgba(0, 0, 0, 0.967732) 15.44%,
+      rgba(0, 0, 0, 0.865569) 16.3%,
+      rgba(0, 0, 0, 0.230315) 22.87%,
+      rgba(0, 0, 0, 0) 26.64%
+    ),
+    linear-gradient(
+      180deg,
+      #000000 0%,
+      rgba(0, 0, 0, 0.689555) 4.66%,
+      rgba(0, 0, 0, 0.439033) 9.34%,
+      rgba(0, 0, 0, 0.20628) 15.16%,
+      rgba(0, 0, 0, 0) 24.22%
+    ),
+    linear-gradient(
+      189.44deg,
+      rgba(0, 0, 0, 0) 58.48%,
+      rgba(0, 0, 0, 0.106473) 63.17%,
+      rgba(0, 0, 0, 0.235359) 68.85%,
+      rgba(0, 0, 0, 0.492821) 78.08%,
+      rgba(0, 0, 0, 0.740286) 85.86%,
+      #000000 92.87%
+    ),
+    url(${({ src }) => src});
+  background-size: 1920px 770px, 1920px 770px, 1920px 770px, 1920px 770px,
+    1368px 769px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (max-width: 1200px) {
+    background-size: 1366px 525px, 1366px 525px, 1366px 525px, 1366px 525px,
+      1024px 525px;
+  }
+
+  @media (max-width: 1040px) {
+    background-size: 1040px 400px, 1040px 400px, 1040px 400px, 1040px 400px,
+      776px 400px;
+  }
+
+  @media (max-width: 767px) {
+    background-size: 700px 300px, 700px 300px, 700px 300px, 700px 300px,
+      550px 300px;
+  }
+
+  @media (max-width: 575px) {
+    background-size: 450px 188px, 450px 188px, 450px 188px, 450px 188px,
+      350px 188px;
+  }
+`;
+
+export const Descripion = styled.div`
+  padding-bottom: 56px;
+  padding: 0px 32px 56px 32px;
+  margin: 0 auto;
+  width: 1368px;
+  height: 770px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  @media (max-width: 1200px) {
+    width: 1024px;
+    height: 525px;
+  }
+
+  @media (max-width: 1040px) {
+    width: 776px;
+    height: 400px;
+    padding: 16px 32px;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 300px;
+    padding: 8px 16px;
+  }
+
+  @media (max-width: 576px) {
+    height: 188px;
+  }
+`;
+
+export const Title = styled.h1`
+  font-weight: 600;
+  font-size: 64px;
+  margin: 0px;
+  color: white;
+
+  @media (max-width: 140) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
+`;
+
+export const MovieRating = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
-  align-content: center;
-  gap: 8px;
+  padding: 0px;
+  flex-wrap: wrap;
+  color: white;
 `;
 
-export const Rate = styled.p`
-  color: #ffffff;
-  font-family: "Poppins";
-  font-style: normal;
+export const MovieRatingImg = styled.img`
+  height: 40px;
+  width: auto;
+  transform: translateY(-8%);
+
+  @media (max-width: 767px) {
+    height: 16px;
+  } ;
+`;
+
+export const MovieRatingNote = styled.p`
   font-weight: 500;
   font-size: 30px;
-  line-height: 130%;
+  line-height: 1.3;
+  align-self: center;
+  margin: 0px 8px;
+  color: white;
 
-  @media (max-width: 480px) {
+  @media (max-width: 767px) {
     font-size: 14px;
-  }
+    font-weight: 600;
+  } ;
 `;
 
-export const MaxRate = styled.p`
-  color: #ffffff;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
+export const MovieRatingText = styled.p`
+  margin: 0px;
   font-size: 16px;
-  line-height: 120%;
+  line-height: 1.2;
+  color: white;
+  flex-basis: 70%;
+  margin-top: 8px;
 
-  @media (max-width: 480px) {
+  @media (max-width: 767px) {
     font-size: 10px;
-  }
+    margin-top: 2px;
+    margin-right: 8px;
+    flex-basis: unset;
+  } ;
 `;
 
-export const Votes = styled.p`
-  color: #ffffff;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 120%;
-  padding: 16px 0px 40px 0px;
+export const MovieRatingTextVote = styled(MovieRatingText)`
+  margin-top: 16px;
 
-  @media (max-width: 480px) {
-    font-size: 10px;
-    padding: 0px;
-  }
+  @media (max-width: 767px) {
+    margin-top: 2px;
+  } ;
 `;
