@@ -82,7 +82,7 @@ export const PeopleDetails = () => {
                                                         genreList={genres.filter((genre) =>
                                                             cast.genre_ids.includes(genre.id)
                                                         )}
-                                                        rate={cast.vote_average}
+                                                        rate={cast.vote_average.toFixed(1)}
                                                         votes={cast.vote_count}
                                                     />
                                                 </StyledLink>
