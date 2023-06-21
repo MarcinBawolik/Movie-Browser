@@ -81,13 +81,17 @@ export const Background = styled.div`
 
 export const Descripion = styled.div`
   padding-bottom: 56px;
-  padding: 0px 32px 56px 32px;
+  padding: 0px 0px 56px 0px;
   margin: 0 auto;
   width: 1368px;
   height: 770px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
+  @media (max-width: 1420px) {
+    padding: 0px 16px 56px 16px;
+  }
 
   @media (max-width: 1200px) {
     width: 1024px;
@@ -108,6 +112,7 @@ export const Descripion = styled.div`
 
   @media (max-width: 576px) {
     height: 188px;
+    padding: 0px 8px 56px 8px;
   }
 `;
 
