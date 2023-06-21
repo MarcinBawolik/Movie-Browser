@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import noPicture from "../../images/noPicture.png"
+import noPicture from "../../images/noPicture.svg"
 import {
     Container,
     Content,

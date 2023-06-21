@@ -4,7 +4,6 @@ import { MovieDetailsTile } from "../../../common/MovieDetailsTile";
 import { useParams } from "react-router-dom";
 import { getMovieDetails, getMovieCredits } from "../moviesAPI";
 import { MovieDetailsWrapper, Wrapper, Header, List, StyledLink } from "./styled";
-import noPicture from "../../../images/noPicture.png";
 import noMovie from "../../../images/noMovie.svg"
 import { useQuery } from "react-query";
 import Loader from "../../../common/Loader"
@@ -97,11 +96,7 @@ export const MovieDetails = () => {
                       id={cast.id}
                       name={cast.character}
                       role={cast.name}
-                      photo={
-                        cast.profile_path
-                          ? `https://image.tmdb.org/t/p/w185/${cast.profile_path}`
-                          : noPicture
-                      }
+                      photo={cast.profile_path}
                     />
                   </StyledLink>
                 ))}
@@ -125,11 +120,7 @@ export const MovieDetails = () => {
                       id={crew.id}
                       role={crew.job}
                       name={crew.name}
-                      photo={
-                        crew.profile_path
-                          ? `https://image.tmdb.org/t/p/w185/${crew.profile_path}`
-                          : noPicture
-                      }
+                      photo={ crew.profile_path}
                     />
                   </StyledLink>
                 ))}

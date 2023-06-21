@@ -2,16 +2,19 @@ import styled from "styled-components";
 import { Link } from "react-router-dom"
 
 export const MovieDetailsWrapper = styled.div`
-  padding: 0 32px;
-  @media (max-width: 1023px) {
+ 
+  @media (max-width: 1420px) {
     padding: 0 16px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 0 8px;
   }
 `;
 
 export const Wrapper = styled.div`
 max-width: 1368px;
   margin: 64px auto;
-  padding: 0 32px;
   display: grid;
   grid-gap: 32px;
   @media (max-width: 1023px) {

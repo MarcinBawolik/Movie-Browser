@@ -7,7 +7,7 @@ import { PeopleTilesList } from "../styled";
 import { MovieMemberTile } from "../../common/MovieMemberTile";
 import { useState } from "react";
 import Pages from "../../common/Pages";
-import noPicture from "../../images/noPicture.png";
+import noPicture from "../../images/noPicture.svg";
 import { StyledLink } from "../../features/People/PopularPeople/Content/Success/styled";
 
 const PeopleList = () => {

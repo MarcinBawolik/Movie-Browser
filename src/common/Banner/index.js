@@ -1,37 +1,34 @@
 import {
-  Container,
-  MaxRate,
-  Rate,
-  Star,
-  Votes,
-  WrapperRate,
-  Title,
-  Image,
+  Background,
   Descripion,
-  ImageWrapper,
-  GradientMask,
+  Title,
+  MovieRatingImg,
+  MovieRatingText,
+  MovieRating,
+  MovieRatingNote,
+  MovieRatingTextVote,
+  Star,
 } from "./styled";
 
-export const Banner = ({ imageSrc, altText, rate, votes, title }) => {
+export const Banner = ({ imageSrc, rate, votes, title }) => {
   return (
     <>
-      {imageSrc !== null && (
-        <Container>
-          <ImageWrapper>
-            <Image src={`https://image.tmdb.org/t/p/w1280/${imageSrc}`} />
-            <GradientMask />
-            <Descripion>
-              <Title>{title}</Title>
-              <WrapperRate>
-                <Star />
-                <Rate>{rate}</Rate>
-                <MaxRate>/10</MaxRate>
-              </WrapperRate>
-              <Votes>{votes} głosów</Votes>
-            </Descripion>
-          </ImageWrapper>
-        </Container>
-      )}
+    {imageSrc !== null && (
+    <Background
+      src={`https://image.tmdb.org/t/p/w1280/${imageSrc}`}>
+      <Descripion>
+        <Title>{title}</Title>
+        <MovieRating>
+          <Star />
+          <MovieRatingNote>{rate}</MovieRatingNote>
+          <MovieRatingText>/ 10</MovieRatingText>
+          <MovieRatingTextVote>
+            {votes} votes
+          </MovieRatingTextVote>
+        </MovieRating>
+      </Descripion>
+    </Background>
+    )}
     </>
-  );
+  )
 };

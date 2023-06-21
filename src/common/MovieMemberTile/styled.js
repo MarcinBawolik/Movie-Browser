@@ -1,18 +1,24 @@
 import styled from "styled-components";
 
 export const Person = styled.div`
- background-color: white;
+  background-color: white;
   padding: 16px;
   border-radius: 5px;
   height: 100%;
   position: relative;
-  filter: drop-shadow(0px 4px 12px rgba(186, 199, 213, 0.5));
+  box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   border-radius: 5px;
   transition: transform 0.3s ease-in-out;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr;
+  grid-gap: 12px;
   
 
   @media (max-width: 766px) {
     padding: 8px;
+    grid-template-rows: auto;
+    grid-gap: 8px;
   }
 
   &:hover {
@@ -22,13 +28,39 @@ export const Person = styled.div`
   }
 `;
 export const Photo = styled.img`
+  margin: 0 auto;
+  width: 177px;
+  height: 264px;
   border-radius: 5px;
-  max-width: 100%;
+  text-align: center;
 
-  @media (max-width: 320px) {
-    min-width: 120px;
+  @media (max-width: 767px) {
+    width: 120px;
+    height: 178px;
   }
 `;
+
+export const NoPhoto = styled.div`
+  margin: 0 auto;
+  width: 177px;
+  height: 264px;
+  border-radius: 5px;
+  background: silver;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 767px) {
+    width: 120px;
+    height: 178px;
+  };
+`
+
+export const ProfileImage = styled.img`
+  width: 72px;
+  height: 72px;
+  color: white;
+`
 
 export const Name = styled.h3`
   font-weight: 500;

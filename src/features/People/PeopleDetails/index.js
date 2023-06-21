@@ -3,7 +3,7 @@ import { PeopleDetailsTile } from "../../../common/PeopleDetailsTile";
 import { useEffect, useState } from "react";
 import { getPersonDetails, getPersonCredits } from "../peopleAPI";
 import { Header, List, StyledLink, Wrapper } from "./styled";
-import { PersonDetailsTile } from "../../../common/PersonDetailsTile";
+import { PersonTile } from "../../../common/PersonTile";
 import noPoster from "../../../images/noPoster.png";
 import { Genres } from "../../../getMovieGenres";
 import Loader from "../../../common/Loader";
@@ -68,7 +68,7 @@ export const PeopleDetails = () => {
                                             credits.cast &&
                                             credits.cast.map((cast) => (
                                                 <StyledLink to={`/movies/movies/${cast.id}`}>
-                                                    <PersonDetailsTile
+                                                    <PersonTile
                                                         as="li"
                                                         id={cast.id}
                                                         imageSrc={
@@ -82,7 +82,7 @@ export const PeopleDetails = () => {
                                                         genreList={genres.filter((genre) =>
                                                             cast.genre_ids.includes(genre.id)
                                                         )}
-                                                        rate={cast.vote_average}
+                                                        rate={cast.vote_average.toFixed(1)}
                                                         votes={cast.vote_count}
                                                     />
                                                 </StyledLink>
@@ -100,7 +100,7 @@ export const PeopleDetails = () => {
                                             credits.crew &&
                                             credits.crew.map((crew) => (
                                                 <StyledLink to={`/movies/movies/${crew.id}`}>
-                                                    <PersonDetailsTile
+                                                    <PersonTile
                                                         as="li"
                                                         id={crew.id}
                                                         imageSrc={

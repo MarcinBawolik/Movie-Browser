@@ -26,22 +26,21 @@ export const Wrapper = styled.div`
 
 export const Image = styled.img`
     border-radius: 5px;
-    width: 400px;
-
-    @media (max-width: 1023px) {
-    width: 40%;
+    width: 312px;
+   
+    @media (max-width: 1020px) {
+    width: 267px;
   }
 
   @media (max-width: 767px) {
-    width: 45%;
+    width: 222px;
   }
 
-  @media (max-width: 480px) {
-   width: 45%;
+  @media (max-width: 576px) {
+    width: 177px;
   }
 
   @media (max-width: 320px) {
-    height: 183px;
     width: 130px;
   }
 `;

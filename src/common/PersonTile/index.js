@@ -12,7 +12,7 @@ import {
   Title,
 } from "./styled";
 
-export const PersonDetailsTile = ({
+export const PersonTile = ({
   id,
   imageSrc,
   altText,
