@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { ReactComponent as WebsiteLogo } from "./images/logo.svg";
+import { ReactComponent as WebsiteLogo } from "../../images/logo.svg";
 const activeClassName = "link-active";
 
 export const Logo = styled(WebsiteLogo)`
