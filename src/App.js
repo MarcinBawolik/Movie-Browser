@@ -11,20 +11,20 @@ import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 function App() {
   return (
     <>
-      <HashRouter basename="/movie-browser">
+      <HashRouter >
         <Nav>
           <Wrapper>
-            <NavLink exact to="/movies/popular-movies">
+            <NavLink to="/movies">
               <Logo />
             </NavLink>
             <NavItems>
               <NavItem>
-                <StyledNavLink exact to="/movies/popular-movies">
+                <StyledNavLink  to="/movies" >
                   Movies
                 </StyledNavLink>
               </NavItem>
               <NavItem>
-                <StyledNavLink exact to="/people/popular-people">
+                <StyledNavLink  to="/people/">
                   People
                 </StyledNavLink>
               </NavItem>
@@ -33,19 +33,16 @@ function App() {
           </Wrapper>
         </Nav>
         <Switch>
-          <Route exact path="/">
-            <Redirect to="/movies/popular-movies" />
-          </Route>
-          <Route path="/people/people/:id">
+          <Route path="/people/:id">
             <PeopleDetails />
           </Route>
-          <Route path="/movies/movies/:id">
-            <MovieDetails />
-          </Route>
-          <Route exact path="/people/popular-people">
+          <Route  path="/people">
             <PopularPeople />
           </Route>
-          <Route exact path="/movies/popular-movies">
+          <Route path="/movies/:id">
+            <MovieDetails />
+          </Route>
+          <Route  path="/movies">
             <PopularMovies />
           </Route>
           <Route path="*">
