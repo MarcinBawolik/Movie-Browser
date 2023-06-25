@@ -45,7 +45,7 @@ const MoviesList = () => {
                 vote_count,
               }) => (
                 <>
-                  <StyledLink to={`/movies/movies/${id}`}>
+                  <StyledLink to={`/movies/${id}`}>
                     <MovieTile
                       movie
                       id={id}

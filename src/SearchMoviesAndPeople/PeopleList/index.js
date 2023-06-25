@@ -32,7 +32,7 @@ const PeopleList = () => {
       <PeopleTilesList>
         {console.log(searchPeople)}
         {currentResults.map(({ id, name, profile_path }) => (
-          <StyledLink to={`/people/people/${id}`}>
+          <StyledLink to={`/people/${id}`}>
             <MovieMemberTile
               person
               key={id}

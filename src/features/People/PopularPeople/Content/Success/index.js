@@ -23,7 +23,7 @@ export const Success = ({ people }) => {
               profile_path
             }) => (
               <>
-                <StyledLink to={`/people/people/${id}`}>
+                <StyledLink to={`/people/${id}`}>
                   <Person key={id}>
                     <Image
                       src={`https://image.tmdb.org/t/p/w185/${profile_path}`}

@@ -90,7 +90,7 @@ export const MovieDetails = () => {
               {credits &&
                 credits.cast &&
                 credits.cast.map((cast) => (
-                  <StyledLink to={`/people/people/${cast.id}`}>
+                  <StyledLink to={`/people/${cast.id}`}>
                     <MovieMemberTile
                       as="li"
                       id={cast.id}
@@ -114,7 +114,7 @@ export const MovieDetails = () => {
               {credits &&
                 credits.crew &&
                 credits.crew.map((crew) => (
-                  <StyledLink to={`/people/people/${crew.id}`}>
+                  <StyledLink to={`/people/${crew.id}`}>
                     <MovieMemberTile
                       as="li"
                       id={crew.id}

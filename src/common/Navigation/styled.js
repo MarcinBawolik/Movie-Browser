@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { ReactComponent as WebsiteLogo } from "./images/logo.svg";
+import { ReactComponent as WebsiteLogo } from "../../images/logo.svg";
+const activeClassName = "link-active";
 
 export const Logo = styled(WebsiteLogo)`
   width: 220px;
@@ -18,22 +19,22 @@ export const Nav = styled.nav`
   }
 `;
 
-export const StyledNavLink = styled(NavLink)`
+export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
   font-weight: 600;
   font-size: 14px;
   color: #ffffff;
   text-decoration: none;
   padding: 13px 24px;
 
-  &.active {
-    border: 1px solid white;
-    border-radius: 24px;
-  }
-
   @media (max-width: 768px) {
     padding: 8px 12px;
     font-size: 12px;
   }
+
+  &.${activeClassName} {
+  border: 1px solid white;
+  border-radius: 24px;
+}
 `;
 
 export const Wrapper = styled.div`
