@@ -12,19 +12,17 @@ import {
   TileText,
 } from "./styled";
 
-const Pages = ({ totalResults, resultsPerPage, currentPage, onPageChange }) => {
+const Pages = ({ totalPages, currentPage, onPageChange }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
-  const totalPages = Math.ceil(totalResults / resultsPerPage);
-
   const handlePreviousPage = () => {
-    if(currentPage > 1) { 
-      onPageChange(currentPage - 1); 
+    if (currentPage > 1) {
+      onPageChange(currentPage - 1);
     }
   };
 
   const handleNextPage = () => {
-    if(currentPage < (totalPages)) {
+    if (currentPage < totalPages) {
       onPageChange(currentPage + 1);
     }
   };
@@ -34,7 +32,7 @@ const Pages = ({ totalResults, resultsPerPage, currentPage, onPageChange }) => {
   };
 
   const handleLastPage = () => {
-    onPageChange(totalPages);
+    onPageChange(500);
   };
 
   return (

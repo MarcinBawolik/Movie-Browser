@@ -15,7 +15,7 @@ const PeopleList = () => {
   const totalResults = useSelector(selectPeopleTotalResults);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [resultsPerPage] = useState(24);
+  const resultsPerPage = 24;
 
   const indexOfLastResult = currentPage * resultsPerPage;
   const indexOfFirstResult = indexOfLastResult - resultsPerPage;
@@ -30,7 +30,6 @@ const PeopleList = () => {
   return (
     <>
       <PeopleTilesList>
-        {console.log(searchPeople)}
         {currentResults.map(({ id, name, profile_path }) => (
           <StyledLink to={`/people/people/${id}`}>
             <MovieMemberTile
@@ -48,8 +47,7 @@ const PeopleList = () => {
         ))}
       </PeopleTilesList>
       <Pages
-        totalResults={totalResults}
-        resultsPerPage={resultsPerPage}
+        totalPages={Math.ceil(totalResults / 20)}
         currentPage={currentPage}
         onPageChange={handlePageChange}
       />
@@ -58,4 +56,3 @@ const PeopleList = () => {
 };
 
 export default PeopleList;
-
