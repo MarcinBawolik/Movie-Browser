@@ -16,7 +16,7 @@ const MoviesList = () => {
   const totalResults = useSelector(selectMoviesTotalResults);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [resultsPerPage] = useState(8);
+  const resultsPerPage = 20;
 
   const indexOfLastResult = currentPage * resultsPerPage;
   const indexOfFirstResult = indexOfLastResult - resultsPerPage;
@@ -70,8 +70,7 @@ const MoviesList = () => {
         )}
       </Genres>
       <Pages
-        totalResults={totalResults}
-        resultsPerPage={resultsPerPage}
+        totalPages={Math.ceil(totalResults/20)}
         currentPage={currentPage}
         onPageChange={handlePageChange}
       />
