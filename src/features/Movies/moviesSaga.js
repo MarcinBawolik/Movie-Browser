@@ -4,7 +4,7 @@ import { getPopularMovies } from "./moviesAPI";
 
 function* fetchPopularMoviesHandler() {
   try {
-    yield delay(2000); //just to show loading status
+    yield delay(1000); //just to show loading status
     const movies = yield call(getPopularMovies);
     yield put(fetchPopularMoviesSuccess(movies));
   } catch (error) {
