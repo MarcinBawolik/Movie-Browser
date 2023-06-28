@@ -37,11 +37,7 @@ const PeopleList = () => {
               key={id}
               id={id}
               name={name}
-              photo={
-                profile_path
-                  ? `https://image.tmdb.org/t/p/w185/${profile_path}`
-                  : noPicture
-              }
+              photo={profile_path}
             />
           </StyledLink>
         ))}
