@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { getPopularPeople } from "../../../peopleAPI";
 import Loader from "../../../../../common/Loader";
 import { Error } from "../../../../../common/Error";
-import noPicture from "../../../../../images/noPicture.png";
+import noPicture from "../../../../../images/noPicture.svg";
 
 export const Success = () => {
   const [currentPage, setCurrentPage] = useState(1);
